@@ -1,5 +1,5 @@
 #
-# spec file for package skelcd-control-MicroOS
+# spec file for package skelcd-control-CASP
 #
 # Copyright (c) 2016 SUSE LINUX Products GmbH, Nuernberg, Germany.
 #
@@ -20,18 +20,18 @@
 #
 # IMPORTANT: Please do not change the control file or this spec file
 #   in build service directly, use
-#   https://github.com/yast/skelcd-control-SLES repository
+#   https://github.com/yast/skelcd-control-CASP repository
 #
-#   See https://github.com/yast/skelcd-control-SLES/blob/master/CONTRIBUTING.md
+#   See https://github.com/yast/skelcd-control-CASP/blob/master/CONTRIBUTING.md
 #   for more details.
 #
 ######################################################################
 
-Name:           skelcd-control-MicroOS
+Name:           skelcd-control-CASP
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
-BuildRequires:  yast2-installation-control >= 3.1.9
+BuildRequires:  yast2-installation-control >= 3.1.13.2
 
 ######################################################################
 #
@@ -86,18 +86,18 @@ Requires:       yast2-vm
 #
 ######################################################################
 
-Url:            https://github.com/yast/skelcd-control-SLES
+Url:            https://github.com/yast/skelcd-control-CASP
 AutoReqProv:    off
-Version:        12.2.2
+Version:        12.2.0
 Release:        0
-Summary:        MicroOS control file needed for installation
+Summary:        CASP control file needed for installation
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 
 %description
-MicroOS control file needed for installation
+CASP control file needed for installation
 
 %prep
 
@@ -114,7 +114,7 @@ make -C control check
 # Add control file 
 #
 mkdir -p $RPM_BUILD_ROOT/CD1
-install -m 644 control/control.MicroOS.xml $RPM_BUILD_ROOT/CD1/control.xml
+install -m 644 control/control.CASP.xml $RPM_BUILD_ROOT/CD1/control.xml
 
 # install LICENSE (required by build service check)
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
