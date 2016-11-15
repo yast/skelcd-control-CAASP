@@ -186,6 +186,8 @@ textdomain="control"
         <btrfs_increase_percentage config:type="integer">300</btrfs_increase_percentage>
         <!-- the default subvolume "@" was requested by product management -->
         <btrfs_default_subvolume>@</btrfs_default_subvolume>
+        <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
+        <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
 
         <!-- Subvolumes to be created for a Btrfs root file system -->
         <!-- copy_on_write is true by default -->
