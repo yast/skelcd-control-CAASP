@@ -432,6 +432,10 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <presentation_order>90</presentation_order>
                 </proposal_module>
                 <proposal_module>
+                    <name>partitions</name>
+                    <presentation_order>25</presentation_order>
+                </proposal_module>
+                <proposal_module>
                     <name>bootloader</name>
                     <presentation_order>40</presentation_order>
                 </proposal_module>
@@ -862,12 +866,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>system_role</name>
                     <archs>i386,x86_64</archs>
                 </module>
-                 <module>
-                    <label>Disk</label>
-                    <name>disk_proposal</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
                 <module>
                     <label>Time Zone</label>
                     <name>timezone</name>
@@ -969,12 +967,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <label>Network Activation</label>
                     <name>lan</name>
-                </module>
-                <module>
-                    <label>Disk</label>
-                    <name>disk_proposal</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
                 </module>
                 <module>
                     <label>Time Zone</label>
