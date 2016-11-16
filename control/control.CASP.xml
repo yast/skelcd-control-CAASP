@@ -433,7 +433,7 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 </proposal_module>
                 <proposal_module>
                     <name>partitions</name>
-                    <presentation_order>25</presentation_order>
+                    <presentation_order>45</presentation_order>
                 </proposal_module>
                 <proposal_module>
                     <name>bootloader</name>
