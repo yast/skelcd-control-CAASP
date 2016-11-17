@@ -175,7 +175,7 @@ textdomain="control"
     </software>
 
     <partitioning>
-        <try_separate_home config:type="boolean">true</try_separate_home>
+        <try_separate_home config:type="boolean">false</try_separate_home>
         <limit_try_home>5GB</limit_try_home>
         <root_space_percent>40</root_space_percent>
         <root_base_size>3GB</root_base_size>
@@ -186,6 +186,8 @@ textdomain="control"
         <btrfs_increase_percentage config:type="integer">300</btrfs_increase_percentage>
         <!-- the default subvolume "@" was requested by product management -->
         <btrfs_default_subvolume>@</btrfs_default_subvolume>
+        <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
+        <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
 
         <!-- Subvolumes to be created for a Btrfs root file system -->
         <!-- copy_on_write is true by default -->
@@ -428,6 +430,10 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <proposal_module>
                     <name>hwinfo</name>
                     <presentation_order>90</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>partitions</name>
+                    <presentation_order>45</presentation_order>
                 </proposal_module>
                 <proposal_module>
                     <name>bootloader</name>
@@ -860,12 +866,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>system_role</name>
                     <archs>i386,x86_64</archs>
                 </module>
-                 <module>
-                    <label>Disk</label>
-                    <name>disk_proposal</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
                 <module>
                     <label>Time Zone</label>
                     <name>timezone</name>
@@ -967,12 +967,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <label>Network Activation</label>
                     <name>lan</name>
-                </module>
-                <module>
-                    <label>Disk</label>
-                    <name>disk_proposal</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
                 </module>
                 <module>
                     <label>Time Zone</label>
