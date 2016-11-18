@@ -11,7 +11,7 @@ textdomain="control"
     <globals>
         <additional_kernel_parameters/>
         <enable_autologin config:type="boolean">false</enable_autologin>
-        <enable_firewall config:type="boolean">true</enable_firewall>
+        <enable_firewall config:type="boolean">false</enable_firewall>
         <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
         <enable_sshd config:type="boolean">true</enable_sshd>
 
@@ -116,7 +116,7 @@ textdomain="control"
 
         <!-- bnc#875350: Explicitly selecting these patterns by default -->
         <!-- For a list of patterns, see https://build.suse.de/package/view_file/SUSE:SLE-12-SP1:GA/patterns-sles/patterns-sles.spec?expand=1 -->
-        <default_patterns>base Minimal</default_patterns>
+        <default_patterns>MicroOS Stack</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -194,19 +194,13 @@ textdomain="control"
         <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
         <subvolumes config:type="list">
             <subvolume>
-                <path>home</path>
-            </subvolume>
-            <subvolume>
-                <path>opt</path>
-            </subvolume>
-            <subvolume>
-                <path>srv</path>
+                <path>root</path>
             </subvolume>
             <subvolume>
                 <path>tmp</path>
             </subvolume>
             <subvolume>
-                <path>usr/local</path>
+                <path>cloud-init-config</path>
             </subvolume>
             <subvolume>
                 <path>var/cache</path>
@@ -215,38 +209,35 @@ textdomain="control"
                 <path>var/crash</path>
             </subvolume>
             <subvolume>
+                <path>var/spool</path>
+            </subvolume>
+            <subvolume>
+                <path>var/lib/cloud</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/libvirt/images</path>
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
-                <path>var/lib/machines</path>
+                <path>var/lib/stateless</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/mailman</path>
+                <path>var/lib/systemd</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/mariadb</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
+                <path>var/lib/wicked</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/mysql</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
+                <path>var/lib/misc</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/named</path>
+                <path>var/lib/nfs</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/pgsql</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
+                <path>var/lib/rollback</path>
             </subvolume>
             <subvolume>
                 <path>var/log</path>
-            </subvolume>
-            <subvolume>
-                <path>var/opt</path>
-            </subvolume>
-            <subvolume>
-                <path>var/spool</path>
             </subvolume>
             <subvolume>
                 <path>var/tmp</path>
