@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Nov 18 12:27:11 UTC 2016 - lslezak@suse.cz
+
+- Adjusted subvolumes configuration (fate#321737), disable firewall
+  by default, install the CASP patterns (author: Thorsten Kukuk)
+- 12.2.3
+
+-------------------------------------------------------------------
 Thu Nov 17 12:04:38 CET 2016 - shundhammer@suse.de
 
 - Moved partitioning proposal out of workflow and into installation
