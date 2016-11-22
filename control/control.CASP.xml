@@ -120,58 +120,8 @@ textdomain="control"
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
-        <!--
-          Only two desktops are supported: gnome and icewm (bnc#862756),
-          but there is no desktop selection dialog. Another desktop has to be
-          selected manually in software selection dialog.
-        -->
-        <supported_desktops config:type="list">
-            <one_supported_desktop>
-                <name>gnome</name>
-                <desktop>sle-classic</desktop>
-                <label_id>dummy_desktop</label_id>
-                <logon>gdm</logon>
-                <cursor>DMZ</cursor>
-                <!--
-                  desktop_finish needs this to find out that gnome has been selected by user
-                  bnc#866724: packages mentioned here are not selected by desktop selection
-                -->
-                <packages>patterns-sle-gnome-basic</packages>
-                <order config:type="integer">1</order>
-                <patterns>base x11 gnome-basic apparmor documentation</patterns>
-                <icon>pattern-gnome</icon>
-            </one_supported_desktop>
-
-            <one_supported_desktop>
-                <name>icewm</name>
-                <desktop>icewm</desktop>
-                <label_id>dummy_desktop</label_id>
-                <logon>gdm</logon>
-                <cursor>DMZ</cursor>
-                <!-- desktop_finish needs this to find out that icewm has been selected by user manually -->
-                <packages>icewm</packages>
-                <order config:type="integer">2</order>
-                <patterns>base x11 apparmor documentation</patterns>
-                <icon>yast-x11</icon>
-            </one_supported_desktop>
-        </supported_desktops>
-
-        <default_desktop>gnome</default_desktop>
-
         <!-- BNC #435479: Show support status in package details -->
         <display_support_status config:type="boolean">true</display_support_status>
-
-        <!-- handling software proposal during product upgrade -->
-        <upgrade>
-          <window_managers config:type="list">
-            <window_manager>
-              <sysconfig_wm>gnome</sysconfig_wm>
-              <check_packages>gnome-session</check_packages>
-              <install_patterns>gnome-basic</install_patterns>
-              <install_packages>gdm gnome-shell-classic</install_packages>
-            </window_manager>
-          </window_managers>
-        </upgrade>
     </software>
 
     <partitioning>
@@ -219,7 +169,7 @@ textdomain="control"
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
-                <path>var/lib/stateless</path>
+                <path>var/lib/overlay</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/systemd</path>

@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Nov 22 13:27:00 UTC 2016 - igonzalezsosa@suse.com
+
+- Remove desktop stuff as it's not needed in CASP
+  (bsc#1011465) (author: Thorsten Kukuk)
+- Replace var/lib/stateless by var/lib/overlay (bsc#1011466)
+- 12.2.4
+
+-------------------------------------------------------------------
 Fri Nov 18 12:27:11 UTC 2016 - lslezak@suse.cz
 
 - Adjusted subvolumes configuration (fate#321737), disable firewall
