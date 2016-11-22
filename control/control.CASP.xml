@@ -169,7 +169,7 @@ textdomain="control"
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
-                <path>var/lib/stateless</path>
+                <path>var/lib/overlay</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/systemd</path>
