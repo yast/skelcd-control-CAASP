@@ -685,19 +685,9 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>update_installer</name>
                 </module>
                 <module>
-                    <name>complex_welcome</name>
-                    <label>Welcome</label>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                    <retranslate config:type="boolean">true</retranslate>
-                </module>
-                <module>
                     <label>Network Activation</label>
                     <name>lan</name>
-                    <enable_back>yes</enable_back>
+                    <enable_back>no</enable_back>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
@@ -722,29 +712,11 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>installation_options</name>
                 </module>
                 <module>
-                    <label>Add-On Products</label>
-                    <name>add-on</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
                     <name>download_release_notes</name>
                 </module>
                 <module>
                     <name>system_role</name>
                     <archs>i386,x86_64</archs>
-                </module>
-                <module>
-                    <label>Time Zone</label>
-                    <name>timezone</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                </module>
-                <module>
-                    <name>user_first</name>
                 </module>
                 <module>
                     <name>root_first</name>
