@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Dec  1 12:55:04 UTC 2016 - mvidner@suse.com
+
+- Simplified the installation workflow: removed these dialogs:
+  license, add-ons, time, user (FATE#321754).
+- Removed update+autoupgrade modes.
+- 12.2.5
+
+-------------------------------------------------------------------
 Tue Nov 22 13:27:00 UTC 2016 - igonzalezsosa@suse.com
 
 - Remove desktop stuff as it's not needed in CASP
