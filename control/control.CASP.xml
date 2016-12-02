@@ -552,79 +552,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
         </proposal>
 
         <proposal>
-            <label>Live Installation Settings</label>
-            <mode>live_installation</mode>
-            <stage>initial</stage>
-            <name>initial</name>
-            <unique_id>live_inst_initial</unique_id>
-            <enable_skip>no</enable_skip>
-            <proposal_modules config:type="list">
-                <proposal_module>bootloader</proposal_module>
-                <proposal_module>default_target</proposal_module>
-                <proposal_module>hwinfo</proposal_module>
-                <proposal_module>users</proposal_module>
-                <proposal_module>clone</proposal_module>
-            </proposal_modules>
-        </proposal>
-
-        <proposal>
-            <label>Update Settings</label>
-            <mode>update</mode>
-            <name>initial</name>
-            <stage>normal</stage>
-            <unique_id>update_settings_initial</unique_id>
-            <enable_skip>no</enable_skip>
-            <proposal_modules config:type="list">
-                <proposal_module>update</proposal_module>
-                <proposal_module>packages</proposal_module>
-                <proposal_module>backup</proposal_module>
-                <proposal_module>language</proposal_module>
-            </proposal_modules>
-        </proposal>
-
-        <proposal>
-            <label>Installation Settings</label>
-            <mode>update,autoupgrade</mode>
-            <stage>initial</stage>
-            <name>initial</name>
-            <unique_id>update_initial</unique_id>
-            <enable_skip>no</enable_skip>
-
-            <proposal_modules config:type="list">
-                <proposal_module>hwinfo</proposal_module>
-                <proposal_module>update</proposal_module>
-                <proposal_module>add-on</proposal_module>
-                <proposal_module>packages</proposal_module>
-                <proposal_module>backup</proposal_module>
-                <proposal_module>language</proposal_module>
-                <proposal_module>keyboard</proposal_module>
-                <proposal_module>bootloader</proposal_module>
-            </proposal_modules>
-        </proposal>
-
-        <proposal>
-            <archs>s390</archs>
-            <label>Installation Settings</label>
-            <mode>update,autoupgrade</mode>
-            <stage>initial</stage>
-            <name>initial</name>
-            <unique_id>update_S390_initial</unique_id>
-            <enable_skip>no</enable_skip>
-            <proposal_modules config:type="list">
-                <proposal_module>hwinfo</proposal_module>
-                <proposal_module>update</proposal_module>
-                <proposal_module>add-on</proposal_module>
-                <proposal_module>dasd</proposal_module>
-                <proposal_module>zfcp</proposal_module>
-                <proposal_module>packages</proposal_module>
-                <proposal_module>backup</proposal_module>
-                <proposal_module>language</proposal_module>
-                <proposal_module>cio_ignore</proposal_module>
-                <proposal_module>bootloader</proposal_module>
-            </proposal_modules>
-        </proposal>
-
-        <proposal>
             <label>Network Configuration</label>
             <name>network</name>
             <stage>continue,normal</stage>
@@ -758,19 +685,9 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>update_installer</name>
                 </module>
                 <module>
-                    <name>complex_welcome</name>
-                    <label>Welcome</label>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                    <retranslate config:type="boolean">true</retranslate>
-                </module>
-                <module>
                     <label>Network Activation</label>
                     <name>lan</name>
-                    <enable_back>yes</enable_back>
+                    <enable_back>no</enable_back>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
@@ -795,29 +712,11 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>installation_options</name>
                 </module>
                 <module>
-                    <label>Add-On Products</label>
-                    <name>add-on</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
                     <name>download_release_notes</name>
                 </module>
                 <module>
                     <name>system_role</name>
                     <archs>i386,x86_64</archs>
-                </module>
-                <module>
-                    <label>Time Zone</label>
-                    <name>timezone</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                </module>
-                <module>
-                    <name>user_first</name>
                 </module>
                 <module>
                     <name>root_first</name>
@@ -876,209 +775,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
             </modules>
         </workflow>
 
-        <!-- Stage: Initial, Mode: Live Installation -->
-        <workflow>
-            <defaults>
-                <archs>all</archs>
-                <enable_back>yes</enable_back>
-                <enable_next>yes</enable_next>
-            </defaults>
-            <label>Installation</label>
-            <mode>live_installation</mode>
-            <stage>initial</stage>
-            <modules config:type="list">
-                <module>
-                    <label>Load Linuxrc Network Configuration</label>
-                    <name>install_inf</name>
-                </module>
-                <module>
-                    <label>Network Autosetup</label>
-                    <name>setup_dhcp</name>
-                </module>
-                <module>
-                    <label>Welcome</label>
-                    <name>complex_welcome</name>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                    <retranslate config:type="boolean">true</retranslate>
-                </module>
-                <module>
-                    <label>Network Activation</label>
-                    <name>lan</name>
-                </module>
-                <module>
-                    <label>Time Zone</label>
-                    <name>timezone</name>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                    <enable_back>yes</enable_back>
-                </module>
-                <module>
-                    <name>scc</name>
-                </module>
-                <module>
-                    <name>root_first</name>
-                </module>
-                <module>
-                    <label>Installation Settings</label>
-                    <name>inst_live_pre-proposal</name>
-                </module>
-                <module>
-                    <label>Installation Settings</label>
-                    <name>inst_proposal</name>
-                    <proposal>initial</proposal>
-                </module>
-                <!-- FATE #303860: Provide consistent progress during installation -->
-                <module>
-                    <label>Perform Installation</label>
-                    <name>prepareprogress</name>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
-                    <name>inst_prepdisk</name>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
-                    <name>inst_kickoff</name>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
-                    <name>inst_live_doit</name>
-                    <enable_next>no</enable_next>
-                    <enable_back>no</enable_back>
-                </module>
-                <module>
-                    <name>live_cleanup</name>
-                    <enable_back>no</enable_back>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
-                    <name>inst_finish</name>
-                    <enable_back>no</enable_back>
-                </module>
-            </modules>
-        </workflow>
-
-        <workflow>
-            <defaults>
-                <archs>all</archs>
-            </defaults>
-            <label>Preparation</label>
-            <mode>update</mode>
-            <stage>initial</stage>
-            <modules config:type="list">
-                <module>
-                    <label>Load Linuxrc Network Configuration</label>
-                    <name>install_inf</name>
-                </module>
-                <module>
-                    <label>Network Autosetup</label>
-                    <name>setup_dhcp</name>
-                </module>
-                <!-- As soon as possible but after network is initialized -->
-                <module>
-                    <label>Installer Update</label>
-                    <name>update_installer</name>
-                </module>
-                <module>
-                    <name>complex_welcome</name>
-                    <label>Welcome</label>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                    <arguments>
-                        <first_run>yes</first_run>
-                    </arguments>
-                    <retranslate config:type="boolean">true</retranslate>
-                </module>
-                <module>
-                    <label>Network Activation</label>
-                    <name>lan</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>Disk Activation</label>
-                    <name>disks_activate</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>System Analysis</label>
-                    <name>system_analysis</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>System for Update</label>
-                    <name>update_partition</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <name>upgrade_urls</name>
-                    <enable_back>yes</enable_back>
-                </module>
-                <module>
-                    <name>scc</name>
-                    <enable_back>yes</enable_back>
-                </module>
-                <module>
-                    <label>Add-On Products</label>
-                    <name>add-on</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <name>download_release_notes</name>
-                </module>
-                <module>
-                    <heading>yes</heading>
-                    <label>Update</label>
-                </module>
-                <module>
-                    <label>Update Summary</label>
-                    <name>initial_update_proposal</name>
-                    <execute>inst_proposal</execute>
-                    <proposal>initial</proposal>
-                </module>
-                <!--
-                    FATE #303860: Provide consistent progress during installation
-                    BNC  #438848: Also during upgrade
-                -->
-                <module>
-                    <label>Perform Update</label>
-                    <name>prepareprogress</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>prepdisk</name>
-                </module>
-                <!-- Clean up the inst-sys to have more free RAM on low memory systems -->
-                <!-- Note: Needs to be call *after* the partitioning step as it might delete
-                the file system or storage kernel modules from inst-sys. They need to be already
-                loaded and active. -->
-                <module>
-                    <label>Installer Cleanup</label>
-                    <name>instsys_cleanup</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>kickoff</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>rpmcopy</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>finish</name>
-                </module>
-            </modules>
-        </workflow>
 
         <workflow>
             <stage>initial</stage>
@@ -1154,98 +850,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
         <workflow>
             <defaults>
                 <archs>all</archs>
-            </defaults>
-            <label>Preparation</label>
-            <mode>autoupgrade</mode>
-            <stage>initial</stage>
-            <modules config:type="list">
-                <!-- As soon as possible -->
-                <module>
-                    <label>Installer Update</label>
-                    <name>update_installer</name>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>System Analysis</label>
-                    <name>system_analysis</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>System for Update</label>
-                    <name>update_partition_auto</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>AutoYaST Settings</label>
-                    <name>autoinit</name>
-                    <archs>all</archs>
-                    <retranslate config:type="boolean">true</retranslate>
-                </module>
-                <module>
-                    <label>AutoYaST Settings</label>
-                    <name>autosetup_upgrade</name>
-                </module>
-                <module>
-                    <heading>yes</heading>
-                    <label>Update</label>
-                </module>
-                <module>
-                    <label>AutoYaST Settings</label>
-                    <name>initial_update_proposal</name>
-                    <execute>inst_proposal</execute>
-                    <proposal>initial</proposal>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>prepareprogress</name>
-                </module>
-
-                <module>
-                    <label>Perform Update</label>
-                    <name>do_resize</name>
-                    <update config:type="boolean">false</update>
-                    <archs>i386,x86_64,ia64</archs>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>prepdisk</name>
-                </module>
-                <!-- Clean up the inst-sys to have more free RAM on low memory systems -->
-                <!-- Note: Needs to be call *after* the partitioning step as it might delete
-                the file system or storage kernel modules from inst-sys. They need to be already
-                loaded and active. -->
-                <module>
-                    <label>Installer Cleanup</label>
-                    <name>instsys_cleanup</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>kickoff</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>store_upgrade_software</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>rpmcopy</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>finish</name>
-                </module>
-            </modules>
-        </workflow>
-
-
-        <workflow>
-            <defaults>
-                <archs>all</archs>
                 <enable_back>no</enable_back>
                 <enable_next>no</enable_next>
             </defaults>
@@ -1276,34 +880,9 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
             </modules>
         </workflow>
 
-        <workflow>
-            <defaults>
-                <archs>all</archs>
-                <enable_back>no</enable_back>
-                <enable_next>no</enable_next>
-            </defaults>
-            <stage>continue</stage>
-            <mode>autoupgrade</mode>
-            <modules config:type="list">
-                <module>
-                    <label>Perform Update</label>
-                    <name>autopost</name>
-                </module>
-                <module>
-                    <label>Perform Update</label>
-                    <name>rpmcopy_secondstage_autoupgrade</name>
-                    <execute>inst_rpmcopy_secondstage</execute>
-                </module>
-                <module>
-                    <heading>yes</heading>
-                    <label>Configuration</label>
-                </module>
-                <module>
-                    <label>System Configuration</label>
-                    <name>autoconfigure</name>
-                </module>
-            </modules>
-        </workflow>
+        <!-- CASP 1 has nothing to upgrade from -->
+        <!-- Removed: <mode>update</mode> -->
+        <!-- Removed: <mode>autoupgrade</mode> -->
 
     </workflows>
 </productDefines>
