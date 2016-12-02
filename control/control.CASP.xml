@@ -364,13 +364,13 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
             <enable_skip>no</enable_skip>
             <proposal_modules config:type="list">
                 <proposal_module>
+                    <name>partitions</name>
+                    <presentation_order>30</presentation_order>
+                </proposal_module>
+                <proposal_module>
                     <name>software</name>
                     <presentation_order>10</presentation_order>
                     <read_only config:type="boolean">true</read_only>
-                </proposal_module>
-                <proposal_module>
-                    <name>partitions</name>
-                    <presentation_order>30</presentation_order>
                 </proposal_module>
                 <proposal_module>
                     <name>bootloader</name>
