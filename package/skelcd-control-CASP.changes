@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Dec  2 14:17:39 CET 2016 - schubi@suse.de
+
+- Added CASP proposal. Cleanup proposal.
+  (Fate#321754)
+- 12.2.6
+
+-------------------------------------------------------------------
 Thu Dec  1 12:55:04 UTC 2016 - mvidner@suse.com
 
 - Simplified the installation workflow: removed these dialogs:
