@@ -1,13 +1,8 @@
 require "yast/rake"
 
-Yast::Tasks.configuration do |conf|
-  # internal OBS
-  conf.obs_api = "https://api.suse.de/"
-  conf.obs_project = "Devel:YaST:CASP:1.0"
-  conf.obs_target = "CASP_1.0"
-  conf.obs_sr_project = "Devel:CASP:1.0"
+Yast::Tasks.submit_to :casp10
 
-  # lets ignore license check for now
+Yast::Tasks.configuration do |conf|
+  #lets ignore license check for now
   conf.skip_license_check << /.*/
 end
-
