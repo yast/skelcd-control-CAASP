@@ -245,6 +245,8 @@ textdomain="control"
 
       <system_role>
         <id>worker_role</id>
+
+        <additional_dialogs>inst_worker_role</additional_dialogs>
       </system_role>
 
       <system_role>
