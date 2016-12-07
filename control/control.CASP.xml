@@ -122,6 +122,11 @@ textdomain="control"
 
         <!-- BNC #435479: Show support status in package details -->
         <display_support_status config:type="boolean">true</display_support_status>
+
+        <!-- AutoYaST clone will be called in the installed system. Unfortunately there is no information about handling recommended
+             packages while first installation. This setting will be taken for install_recommended in the software section
+             of AY configuration file. Default is "true" -->
+        <ay_clone_install_recommended_default config:type="boolean">false</ay_clone_install_recommended_default>
     </software>
 
     <partitioning>
@@ -463,6 +468,17 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <label>Load Linuxrc Network Configuration</label>
                     <name>install_inf</name>
+                    <!-- Configuring libzypp in order to install a minimal system (no recommended packages,...) Fate#321764 -->
+                    <prescript>
+                        <interpreter>shell</interpreter>
+                        <source>
+<![CDATA[#!/bin/sh
+sed -i 's/.*onlyRequires.*/# minimal CASP; set by YaST control.xml\nsolver.onlyRequires = true/g' /etc/zypp/zypp.conf
+sed -i 's/.*rpm.install.excludedocs.*/# minimal CASP; set by YaST control.xml\nrpm.install.excludedocs = yes/g' /etc/zypp/zypp.conf
+sed -i 's/^multiversion =.*/# minimal CASP; set by YaST control.xml\nmultiversion =/g' /etc/zypp/zypp.conf
+]]>
+                        </source>
+                    </prescript>
                 </module>
                 <module>
                     <label>Network Autosetup</label>
@@ -560,6 +576,16 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <label>Perform Installation</label>
                     <name>finish</name>
+                    <!-- Configuring libzypp in order to install a minimal system (no recommended packages,...) Fate#321764 -->
+                    <!-- by using inst-sys zypp.conf which has already been patched. -->
+                    <prescript>
+                        <interpreter>shell</interpreter>
+                        <source>
+<![CDATA[#!/bin/sh
+cp /etc/zypp/zypp.conf /mnt/etc/zypp/zypp.conf
+]]>
+                        </source>
+                    </prescript>
                 </module>
             </modules>
         </workflow>
@@ -581,6 +607,17 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>update_installer</name>
                     <enable_back>no</enable_back>
                     <enable_next>yes</enable_next>
+                    <!-- Configuring libzypp in order to install a minimal system (no recommended packages,...) Fate#321764 -->
+                    <prescript>
+                        <interpreter>shell</interpreter>
+                        <source>
+<![CDATA[#!/bin/sh
+sed -i 's/.*onlyRequires.*/# minimal CASP; set by YaST control.xml\nsolver.onlyRequires = true/g' /etc/zypp/zypp.conf
+sed -i 's/.*rpm.install.excludedocs.*/# minimal CASP; set by YaST control.xml\nrpm.install.excludedocs = yes/g' /etc/zypp/zypp.conf
+sed -i 's/^multiversion =.*/# minimal CASP; set by YaST control.xml\nmultiversion =/g' /etc/zypp/zypp.conf
+]]>
+                        </source>
+                    </prescript>
                 </module>
                 <module>
                     <label>AutoYaST Settings</label>
@@ -632,6 +669,16 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <label>Perform Installation</label>
                     <name>finish</name>
+                    <!-- Configuring libzypp in order to install a minimal system (no recommended packages,...) Fate#321764 -->
+                    <!-- by using inst-sys zypp.conf which has already been patched. -->
+                    <prescript>
+                        <interpreter>shell</interpreter>
+                        <source>
+<![CDATA[#!/bin/sh
+cp /etc/zypp/zypp.conf /mnt/etc/zypp/zypp.conf
+]]>
+                        </source>
+                    </prescript>
                 </module>
             </modules>
         </workflow>
