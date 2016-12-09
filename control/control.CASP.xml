@@ -125,7 +125,7 @@ textdomain="control"
 
         <!-- AutoYaST clone will be called in the installed system. Unfortunately there is no information about handling recommended
              packages while first installation. This setting will be taken for install_recommended in the software section
-             of AY configuration file. Default is "true" -->
+             of AY configuration file (Fate#321764). Default is "true" -->
         <clone_install_recommended_default config:type="boolean">false</clone_install_recommended_default>
     </software>
 
