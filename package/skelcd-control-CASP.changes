@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Wed Dec  7 15:02:18 CET 2016 - schubi@suse.de
+
+- Added default entry (clone_install_recommended_default) for
+  "install_recommended" in created AutoYaST configuration file.
+- Fate#321764
+- 12.2.7
+
+-------------------------------------------------------------------
 Fri Dec  2 14:17:39 CET 2016 - schubi@suse.de
 
 - Added CASP proposal. Cleanup proposal.
