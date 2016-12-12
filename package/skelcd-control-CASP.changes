@@ -2,6 +2,7 @@
 Mon Dec 12 12:03:32 UTC 2016 - igonzalezsosa@suse.com
 
 - Add /var/lib/machines to the list of default Btrfs subvolumes
+  (bsc#1015071)
 - 12.2.8
 
 -------------------------------------------------------------------
