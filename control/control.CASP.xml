@@ -183,6 +183,9 @@ textdomain="control"
                 <path>var/lib/wicked</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/machines</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/misc</path>
             </subvolume>
             <subvolume>
