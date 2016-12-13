@@ -143,6 +143,7 @@ textdomain="control"
         <btrfs_default_subvolume>@</btrfs_default_subvolume>
         <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
+        <root_subvolume_read_only config:type="boolean">true</root_subvolume_read_only>
 
         <!-- Subvolumes to be created for a Btrfs root file system -->
         <!-- copy_on_write is true by default -->
