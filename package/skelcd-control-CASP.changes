@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
+
+- Added new parameter for CASP read-only Btrfs root subvolume
+  (Fate#321755) 
+- 12.2.10
+
+-------------------------------------------------------------------
 Tue Dec 13 16:25:14 UTC 2016 - jreidinger@suse.com
 
 - Add keyboard and root password combined dialog to installation
