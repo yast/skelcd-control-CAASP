@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Dec 13 16:25:14 UTC 2016 - jreidinger@suse.com
+
+- Add keyboard and root password combined dialog to installation
+  work-flow (FATE#321764)
+- 12.2.9
+
+-------------------------------------------------------------------
 Mon Dec 12 12:03:32 UTC 2016 - igonzalezsosa@suse.com
 
 - Add /var/lib/machines to the list of default Btrfs subvolumes

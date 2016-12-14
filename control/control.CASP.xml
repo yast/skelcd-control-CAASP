@@ -482,9 +482,14 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                     <name>update_installer</name>
                 </module>
                 <module>
+                    <name>keyboard_root_password</name>
+                    <enable_back>no</enable_back>
+                    <enable_next>yes</enable_next>
+                </module>
+                <module>
                     <label>Network Activation</label>
                     <name>lan</name>
-                    <enable_back>no</enable_back>
+                    <enable_back>yes</enable_back>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
@@ -514,9 +519,6 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <module>
                     <name>system_role</name>
                     <archs>i386,x86_64</archs>
-                </module>
-                <module>
-                    <name>root_first</name>
                 </module>
                 <module>
                     <heading>yes</heading>
