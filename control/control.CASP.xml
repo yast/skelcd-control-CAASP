@@ -304,40 +304,39 @@ Please visit us at http://www.suse.com/.
         <service_sfcb><label>CIM Server</label></service_sfcb>
         <roles_caption>
           <!-- TRANSLATORS: dialog caption -->
-          <label>CASP Roles</label>
+          <label>System Role</label>
         </roles_caption>
         <roles_text>
           <!-- TRANSLATORS: label in a dialog -->
-          <label>Roles are predefined use cases which tailor the system
+          <label>System Roles are predefined use cases which tailor the system
 for the selected scenario.</label>
         </roles_text>
         <roles_help>
           <!-- TRANSLATORS: dialog help -->
-          <label>&lt;p&gt;The roles adjustments are in the range from package selection up
-to disk partitioning. By choosing a CASP role, the system is
+          <label>&lt;p&gt;The system roles adjustments are in the range from package selection up
+to disk partitioning. By choosing a system role, the system is
 configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         </roles_help>
         <dashboard_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>Admin Dashboard</label>
+          <label>Administration Dashboard</label>
         </dashboard_role>
         <dashboard_role_description>
-          <label>• Default system with administration dashboard</label>
+          <label>• A set of tools and a dashboard for managing workers.</label>
         </dashboard_role_description>
         <worker_role>
           <!-- TRANSLATORS: a label for a system role -->
           <label>Worker</label>
         </worker_role>
         <worker_role_description>
-          <label>• Default system registering as worker at the admin dashboard</label>
+          <label>• The system is registered as a worker in a given administration dashboard.</label>
         </worker_role_description>
         <none_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>None</label>
+          <label>Plain System</label>
         </none_role>
         <none_role_description>
-          <!-- TRANSLATORS: a label for a system role -->
-          <label>• Default system, no services started by default</label>
+          <label>• No services started by default.</label>
         </none_role_description>
     </texts>
 
