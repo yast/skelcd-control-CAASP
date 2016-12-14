@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Dec 12 13:21:05 UTC 2016 - mfilka@suse.com
+
+- Added option for doing software selection read-only
+- 12.2.9
+
+-------------------------------------------------------------------
 Mon Dec 12 12:03:32 UTC 2016 - igonzalezsosa@suse.com
 
 - Add /var/lib/machines to the list of default Btrfs subvolumes
