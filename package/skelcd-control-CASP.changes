@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Dec 14 12:31:14 UTC 2016 - kanderssen@suse.com
+
+- Added System Roles for CASP (FATE#321754).
+- 12.2.11
+
+-------------------------------------------------------------------
 Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
 
 - Added new parameter for CASP read-only Btrfs root subvolume
