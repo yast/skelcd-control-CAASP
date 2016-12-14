@@ -1,7 +1,21 @@
 -------------------------------------------------------------------
-Mon Dec 12 13:21:05 UTC 2016 - mfilka@suse.com
+Wed Dec 14 12:43:25 UTC 2016 - mfilka@suse.com
 
 - Added option for doing software selection read-only
+- 12.2.11
+
+-------------------------------------------------------------------
+Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
+
+- Added new parameter for CASP read-only Btrfs root subvolume
+  (Fate#321755) 
+- 12.2.10
+
+-------------------------------------------------------------------
+Tue Dec 13 16:25:14 UTC 2016 - jreidinger@suse.com
+
+- Add keyboard and root password combined dialog to installation
+  work-flow (FATE#321764)
 - 12.2.9
 
 -------------------------------------------------------------------
