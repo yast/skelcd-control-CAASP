@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Dec 19 12:08:02 CET 2016 - shundhammer@suse.de
+
+- Added subvol for docker, not libvirt (bsc#1015720)
+- 12.2.13
+
+-------------------------------------------------------------------
 Wed Dec 14 15:31:51 UTC 2016 - igonzalezsosa@suse.com
 
 - Set timezone as read-only (FATE#321754).
