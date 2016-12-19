@@ -173,8 +173,7 @@ textdomain="control"
                 <path>var/lib/cloud</path>
             </subvolume>
             <subvolume>
-                <path>var/lib/libvirt/images</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
+                <path>var/lib/docker</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/overlay</path>
