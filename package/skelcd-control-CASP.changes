@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Dec 20 10:18:54 UTC 2016 - mfilka@suse.com
+
+- fate#321739
+  - use soft read-only flag for software proposal to allow
+    modification in case of error
+- 12.2.11 
+
+-------------------------------------------------------------------
 Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
 
 - Added new parameter for CASP read-only Btrfs root subvolume
