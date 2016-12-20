@@ -379,7 +379,7 @@ defined by a role can be overridden in the next steps if necessary.&lt;/p&gt;</l
                 <proposal_module>
                     <name>software</name>
                     <presentation_order>10</presentation_order>
-                    <read_only config:type="boolean">true</read_only>
+                    <read_only>soft</read_only>
                 </proposal_module>
                 <proposal_module>
                     <name>bootloader</name>
