@@ -4,7 +4,25 @@ Tue Dec 20 10:18:54 UTC 2016 - mfilka@suse.com
 - fate#321739
   - use soft read-only flag for software proposal to allow
     modification in case of error
-- 12.2.11 
+- 12.2.14 
+-------------------------------------------------------------------
+
+Mon Dec 19 12:08:02 CET 2016 - shundhammer@suse.de
+
+- Added subvol for docker, not libvirt (bsc#1015720)
+- 12.2.13
+
+-------------------------------------------------------------------
+Wed Dec 14 15:31:51 UTC 2016 - igonzalezsosa@suse.com
+
+- Set timezone as read-only (FATE#321754).
+- 12.2.12
+
+-------------------------------------------------------------------
+Wed Dec 14 12:31:14 UTC 2016 - kanderssen@suse.com
+
+- Added System Roles for CASP (FATE#321754).
+- 12.2.11
 
 -------------------------------------------------------------------
 Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
