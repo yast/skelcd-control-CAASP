@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Dec 23 15:34:02 UTC 2016 - kanderssen@suse.com
+
+- Added subvol for etcd without copy on write (bsc#1017145)
+- 12.2.14
+
+-------------------------------------------------------------------
 Mon Dec 19 12:08:02 CET 2016 - shundhammer@suse.de
 
 - Added subvol for docker, not libvirt (bsc#1015720)
