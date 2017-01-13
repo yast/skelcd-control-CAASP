@@ -140,7 +140,7 @@ textdomain="control"
         <proposal_lvm config:type="boolean">false</proposal_lvm>
         <vm_desired_size>15GB</vm_desired_size>
         <vm_home_max_size>25GB</vm_home_max_size>
-        <!-- always propose snapper enabled, therefore no increas (bsc#1019652)
+        <!-- always propose snapper enabled, therefore no increas (bsc#1019652) -->
         <btrfs_increase_percentage config:type="integer">0</btrfs_increase_percentage>
         <!-- the default subvolume "@" was requested by product management -->
         <btrfs_default_subvolume>@</btrfs_default_subvolume>
