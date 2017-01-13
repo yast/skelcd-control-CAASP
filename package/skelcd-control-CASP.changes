@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Jan 13 09:17:18 UTC 2017 - jsrain@suse.cz
+
+- Adjusted root filesystem minimal size (bsc#1019652)
+- 12.2.15
+
+-------------------------------------------------------------------
 Fri Dec 23 15:34:02 UTC 2016 - kanderssen@suse.com
 
 - Added subvol for etcd without copy on write (bsc#1017145)
