@@ -53,7 +53,7 @@ Requires:       yast2-fcoe-client
 # For creating the AutoYast profile at the end of installation (bnc#887406)
 Requires:       yast2-firewall
 # instsys_cleanup
-Requires:       yast2-installation >= 3.1.201
+Requires:       yast2-installation >= 3.1.217.9
 Requires:       yast2-iscsi-client
 Requires:       yast2-kdump
 Requires:       yast2-multipath
