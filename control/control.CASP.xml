@@ -135,12 +135,13 @@ textdomain="control"
         <try_separate_home config:type="boolean">false</try_separate_home>
         <limit_try_home>5GB</limit_try_home>
         <root_space_percent>40</root_space_percent>
-        <root_base_size>3GB</root_base_size>
+        <root_base_size>10GB</root_base_size>
         <root_max_size>10GB</root_max_size>
         <proposal_lvm config:type="boolean">false</proposal_lvm>
         <vm_desired_size>15GB</vm_desired_size>
         <vm_home_max_size>25GB</vm_home_max_size>
-        <btrfs_increase_percentage config:type="integer">300</btrfs_increase_percentage>
+        <!-- always propose snapper enabled, therefore no increase (bsc#1019652) -->
+        <btrfs_increase_percentage config:type="integer">0</btrfs_increase_percentage>
         <!-- the default subvolume "@" was requested by product management -->
         <btrfs_default_subvolume>@</btrfs_default_subvolume>
         <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
@@ -174,6 +175,10 @@ textdomain="control"
             </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
+            </subvolume>
+            <subvolume>
+                <path>var/lib/etcd</path>
+                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/overlay</path>

@@ -1,12 +1,24 @@
 -------------------------------------------------------------------
-Tue Dec 20 10:18:54 UTC 2016 - mfilka@suse.com
+Mon Jan 16 09:17:52 UTC 2017 - mfilka@suse.com
 
 - fate#321739
   - use soft read-only flag for software proposal to allow
     modification in case of error
-- 12.2.14 
+- 12.2.16 
 -------------------------------------------------------------------
 
+Fri Jan 13 09:17:18 UTC 2017 - jsrain@suse.cz
+
+- Adjusted root filesystem minimal size (bsc#1019652)
+- 12.2.15
+
+-------------------------------------------------------------------
+Fri Dec 23 15:34:02 UTC 2016 - kanderssen@suse.com
+
+- Added subvol for etcd without copy on write (bsc#1017145)
+- 12.2.14
+
+-------------------------------------------------------------------
 Mon Dec 19 12:08:02 CET 2016 - shundhammer@suse.de
 
 - Added subvol for docker, not libvirt (bsc#1015720)
