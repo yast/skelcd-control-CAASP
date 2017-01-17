@@ -1,12 +1,20 @@
 -------------------------------------------------------------------
+Mon Jan 16 11:08:50 UTC 2017 - igonzalezsosa@suse.com
+
+- Set minimalistic configuration for libzypp (only required
+  packages, no documentation and no multiversion)
+  (FATE#321764)
+- 12.2.17
+
+-------------------------------------------------------------------
 Mon Jan 16 09:17:52 UTC 2017 - mfilka@suse.com
 
 - fate#321739
   - use soft read-only flag for software proposal to allow
     modification in case of error
-- 12.2.16 
--------------------------------------------------------------------
+- 12.2.16
 
+-------------------------------------------------------------------
 Fri Jan 13 09:17:18 UTC 2017 - jsrain@suse.cz
 
 - Adjusted root filesystem minimal size (bsc#1019652)
