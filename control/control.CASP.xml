@@ -80,9 +80,6 @@ textdomain="control"
                 <packages>sblim-sfcb</packages>
             </service>
         </services_proposal>
-
-	<!-- self-update URL -->
-	<self_update_url>https://updates.suse.com/SUSE/Updates/SLE-SERVER-INSTALLER/12-SP2/$arch/update</self_update_url>
     </globals>
 
     <software>
@@ -216,23 +213,15 @@ textdomain="control"
 
             <subvolume>
                 <path>boot/grub2/i386-pc</path>
-                <archs>i386,x86_64</archs>
+                <archs>x86_64</archs>
             </subvolume>
             <subvolume>
                 <path>boot/grub2/x86_64-efi</path>
                 <archs>x86_64</archs>
             </subvolume>
             <subvolume>
-                <path>boot/grub2/powerpc-ieee1275</path>
-                <archs>ppc,!board_powernv</archs>
-            </subvolume>
-            <subvolume>
                 <path>boot/grub2/x86_64-efi</path>
                 <archs>x86_64</archs>
-            </subvolume>
-            <subvolume>
-                <path>boot/grub2/s390x-emu</path>
-                <archs>s390</archs>
             </subvolume>
         </subvolumes>
 
@@ -463,16 +452,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <label>Network Autosetup</label>
                     <name>setup_dhcp</name>
                 </module>
-                <!-- As soon as possible but after network is initialized -->
-                <module>
-                    <label>Installer Update</label>
-                    <name>update_installer</name>
-                </module>
-                <module>
-                    <name>keyboard_root_password</name>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
                 <module>
                     <label>Network Activation</label>
                     <name>lan</name>
@@ -492,7 +471,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
-                    <name>scc</name>
+                    <name>casp_overview</name>
                     <enable_back>yes</enable_back>
                     <enable_next>yes</enable_next>
                 </module>
@@ -502,10 +481,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                 </module>
                 <module>
                     <name>download_release_notes</name>
-                </module>
-                <module>
-                    <name>system_role</name>
-                    <archs>i386,x86_64</archs>
                 </module>
                 <module>
                     <heading>yes</heading>
