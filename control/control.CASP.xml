@@ -471,11 +471,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
-                    <name>casp_overview</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
-                <module>
                     <label>System Analysis</label>
                     <name>installation_options</name>
                 </module>
@@ -487,10 +482,9 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <label>Installation</label>
                 </module>
                 <module>
-                    <label>Installation Summary</label>
-                    <name>initial_installation_proposal</name>
-                    <execute>inst_proposal</execute>
-                    <proposal>initial</proposal>
+                    <name>casp_overview</name>
+                    <enable_back>yes</enable_back>
+                    <enable_next>yes</enable_next>
                 </module>
                 <!-- FATE #303860: Provide consistent progress during installation -->
                 <module>
