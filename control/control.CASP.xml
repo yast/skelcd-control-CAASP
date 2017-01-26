@@ -245,6 +245,13 @@ textdomain="control"
         <id>worker_role</id>
 
         <additional_dialogs>inst_worker_role</additional_dialogs>
+
+        <!-- for worker only salt and rest will be configured -->
+        <services config:type="list">
+          <service>
+            <name>salt-minion</name>
+          </service>
+        </services>
       </system_role>
 
       <system_role>
