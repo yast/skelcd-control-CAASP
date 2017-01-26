@@ -246,17 +246,6 @@ textdomain="control"
         <!-- the id is a key for texts/$id/label
                              and texts/$id_description/label below -->
         <id>dashboard_role</id>
-
-        <services config:type="list">
-          <service>
-            <name>salt-master</name>
-          <service>
-          <service>
-            <!-- this is in fact mariadb, but same systemd service -->
-            <name>mysql</name>
-          <service>
-          <!-- TODO: dashboard itself -->
-        </services>
       </system_role>
 
       <system_role>
@@ -264,6 +253,7 @@ textdomain="control"
 
         <additional_dialogs>inst_worker_role</additional_dialogs>
 
+        <!-- for worker only salt and rest will be configured -->
         <services config:type="list">
           <service>
             <name>salt-minion</name>
