@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Jan 26 10:08:32 UTC 2017 - jreidinger@suse.com
+
+- initial set of services adaptation for CASP roles (FATE#322328)
+- 12.2.19
+
+-------------------------------------------------------------------
 Wed Jan 25 15:36:45 UTC 2017 - mvidner@suse.com
 
 - Use the all-in-one installation overview dialog (FATE#322328)
