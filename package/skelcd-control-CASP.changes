@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Jan 25 15:36:45 UTC 2017 - mvidner@suse.com
+
+- Use the all-in-one installation overview dialog (FATE#322328)
+- 12.2.18
+
+-------------------------------------------------------------------
 Mon Jan 16 11:08:50 UTC 2017 - igonzalezsosa@suse.com
 
 - Set minimalistic configuration for libzypp (only required
