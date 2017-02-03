@@ -504,38 +504,12 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
             </modules>
         </workflow>
 
-        <workflow>
-            <defaults>
-                <archs>all</archs>
-                <enable_back>no</enable_back>
-                <enable_next>no</enable_next>
-            </defaults>
-            <stage>continue</stage>
-            <mode>autoinstallation</mode>
-            <modules config:type="list">
-                <module>
-                    <label>Perform Installation</label>
-                    <name>autopost</name>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
-                    <name>rpmcopy_secondstage_autoinstall</name>
-                    <execute>inst_rpmcopy_secondstage</execute>
-                </module>
-                <module>
-                    <heading>yes</heading>
-                    <label>Configuration</label>
-                </module>
-                <module>
-                    <label>System Configuration</label>
-                    <name>autoconfigure</name>
-                </module>
-            </modules>
-        </workflow>
-
         <!-- CASP 1 has nothing to upgrade from -->
         <!-- Removed: <mode>update</mode> -->
         <!-- Removed: <mode>autoupgrade</mode> -->
+
+        <!-- CASP 1 does not have AutoYaST second stage -->
+        <!-- Removed: <mode>autoinstallation</mode> && <stage>continue</stage> -->
 
     </workflows>
 </productDefines>

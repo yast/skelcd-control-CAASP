@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Feb  3 14:17:57 UTC 2017 - igonzalezsosa@suse.com
+
+- Remove AutoYaST second stage because it's not available in CaaSP
+  (bsc#1022267)
+- 12.2.20
+
+-------------------------------------------------------------------
 Thu Jan 26 10:08:32 UTC 2017 - jreidinger@suse.com
 
 - initial set of services adaptation for CASP roles (FATE#322328)
