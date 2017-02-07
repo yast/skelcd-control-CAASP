@@ -441,13 +441,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                 <enable_next>no</enable_next>
             </defaults>
             <modules config:type="list">
-                <!-- As soon as possible -->
-                <module>
-                    <label>Installer Update</label>
-                    <name>update_installer</name>
-                    <enable_back>no</enable_back>
-                    <enable_next>yes</enable_next>
-                </module>
                 <module>
                     <label>AutoYaST Settings</label>
                     <name>autoinit</name>
