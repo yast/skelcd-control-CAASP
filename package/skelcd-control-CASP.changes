@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Feb  7 13:03:25 UTC 2017 - jsrain@suse.cz
+
+- remove installer update also from AutoYaST workflow (bsc#1024032)
+- 12.2.22
+
+-------------------------------------------------------------------
 Tue Feb  7 11:25:44 UTC 2017 - kanderssen@suse.com
 
 - Removed additional dialog for worker role which is not used
