@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Feb  7 11:25:44 UTC 2017 - kanderssen@suse.com
+
+- Removed additional dialog for worker role which is not used
+  anymore (FATE#322328).
+- 12.2.21
+
+-------------------------------------------------------------------
 Fri Feb  3 14:17:57 UTC 2017 - igonzalezsosa@suse.com
 
 - Remove AutoYaST second stage because it's not available in CaaSP
