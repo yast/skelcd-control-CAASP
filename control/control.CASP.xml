@@ -244,8 +244,6 @@ textdomain="control"
       <system_role>
         <id>worker_role</id>
 
-        <additional_dialogs>inst_worker_role</additional_dialogs>
-
         <!-- for worker only salt and rest will be configured -->
         <services config:type="list">
           <service>
