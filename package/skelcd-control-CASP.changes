@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Feb 16 12:44:10 UTC 2017 - mfilka@suse.com
+
+- fate#322328
+  - appended (defaul) to "Administrative Dashboard" label to make
+    it more obvious that such role will be used by default.
+- 12.2.23 
+
+-------------------------------------------------------------------
 Tue Feb  7 13:03:25 UTC 2017 - jsrain@suse.cz
 
 - remove installer update also from AutoYaST workflow (bsc#1024032)
