@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Feb 28 14:36:55 CET 2017 - shundhammer@suse.de
+
+- Added subvolumes /var/lib/kubelet and /var/lib/ntp (bsc#1026473)
+- 12.2.24 
+
+-------------------------------------------------------------------
 Thu Feb 16 12:44:10 UTC 2017 - mfilka@suse.com
 
 - fate#322328
