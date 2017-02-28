@@ -88,7 +88,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CASP
 AutoReqProv:    off
-Version:        12.2.23
+Version:        12.2.24
 Release:        0
 Summary:        CASP control file needed for installation
 License:        MIT

@@ -178,6 +178,12 @@ textdomain="control"
                 <path>var/lib/docker</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/kubelet</path>
+            </subvolume>
+            <subvolume>
+                <path>var/lib/ntp</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/etcd</path>
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
