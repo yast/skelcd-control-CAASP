@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Mar 13 13:43:51 UTC 2017 - kanderssen@suse.com
+
+- Added subvolume /var/lib/vmware (bsc#1028647)
+- 12.2.25
+
+-------------------------------------------------------------------
 Tue Feb 28 14:36:55 CET 2017 - shundhammer@suse.de
 
 - Added subvolumes /var/lib/kubelet and /var/lib/ntp (bsc#1026473)

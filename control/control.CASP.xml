@@ -194,6 +194,9 @@ textdomain="control"
                 <path>var/lib/systemd</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/vmware</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/wicked</path>
             </subvolume>
             <subvolume>
