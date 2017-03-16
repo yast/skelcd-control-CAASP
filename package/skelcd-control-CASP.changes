@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Mar 16 13:37:37 UTC 2017 - kanderssen@suse.com
+
+- bsc#1029325
+  - Added subvolume /var/lib/mysql without copy on write.
+  - Disabled copy on write on /var/lib/kubelet and /var/lib/docker
+- 12.2.26
+
+-------------------------------------------------------------------
 Mon Mar 13 13:43:51 UTC 2017 - kanderssen@suse.com
 
 - Added subvolume /var/lib/vmware (bsc#1028647)
@@ -8,7 +16,7 @@ Mon Mar 13 13:43:51 UTC 2017 - kanderssen@suse.com
 Tue Feb 28 14:36:55 CET 2017 - shundhammer@suse.de
 
 - Added subvolumes /var/lib/kubelet and /var/lib/ntp (bsc#1026473)
-- 12.2.24 
+- 12.2.24
 
 -------------------------------------------------------------------
 Thu Feb 16 12:44:10 UTC 2017 - mfilka@suse.com
@@ -16,7 +24,7 @@ Thu Feb 16 12:44:10 UTC 2017 - mfilka@suse.com
 - fate#322328
   - appended (defaul) to "Administrative Dashboard" label to make
     it more obvious that such role will be used by default.
-- 12.2.23 
+- 12.2.23
 
 -------------------------------------------------------------------
 Tue Feb  7 13:03:25 UTC 2017 - jsrain@suse.cz
@@ -171,5 +179,5 @@ Thu Nov  3 11:57:25 CET 2016 - shundhammer@suse.de
 -------------------------------------------------------------------
 Fri Sep 30 15:12:41 CEST 2016 - kukuk@suse.de
 
-- Initial Versin 
+- Initial Version
 

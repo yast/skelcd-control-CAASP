@@ -176,9 +176,15 @@ textdomain="control"
             </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
+                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/kubelet</path>
+                <copy_on_write config:type="boolean">false</copy_on_write>
+            </subvolume>
+            <subvolume>
+                <path>var/lib/mysql</path>
+                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/ntp</path>
