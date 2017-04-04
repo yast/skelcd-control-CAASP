@@ -254,16 +254,21 @@ textdomain="control"
         <!-- the id is a key for texts/$id/label
                              and texts/$id_description/label below -->
         <id>dashboard_role</id>
+
+        <services config:type="list">
+          <service><name>container-feeder</name></service>
+          <service><name>docker</name></service>
+          <service><name>etcd</name></service>
+          <service><name>kubelet</name></service>
+        </services>
       </system_role>
 
       <system_role>
         <id>worker_role</id>
 
-        <!-- for worker only salt and rest will be configured -->
         <services config:type="list">
-          <service>
-            <name>salt-minion</name>
-          </service>
+          <service><name>container-feeder</name></service>
+          <service><name>salt-minion</name></service>
         </services>
       </system_role>
 
@@ -337,17 +342,17 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         </roles_help>
         <dashboard_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>Administration Dashboard (default)</label>
+          <label>Administration Node (Dashboard)</label>
         </dashboard_role>
         <dashboard_role_description>
-          <label>• A set of tools and a dashboard for managing workers.</label>
+          <label>• A set of tools and a dashboard for managing cluster nodes.</label>
         </dashboard_role_description>
         <worker_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>Worker</label>
+          <label>Cluster Node</label>
         </worker_role>
         <worker_role_description>
-          <label>• The system is registered as a worker in a given administration dashboard.</label>
+          <label>• The system is registered in a given administration dashboard.</label>
         </worker_role_description>
         <none_role>
           <!-- TRANSLATORS: a label for a system role -->
