@@ -48,6 +48,7 @@ Requires:       yast2-theme-SLE
 Requires:       autoyast2
 Requires:       yast2-add-on
 Requires:       yast2-buildtools
+Requires:       yast2-caasp
 Requires:       yast2-devtools
 Requires:       yast2-fcoe-client
 # For creating the AutoYast profile at the end of installation (bnc#887406)
