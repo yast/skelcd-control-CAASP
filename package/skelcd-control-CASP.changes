@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Apr  4 13:06:02 UTC 2017 - mvidner@suse.com
+
+- bsc#1032057
+  - Role names: Administration Node, Cluster Node, Plain System
+  - Enable container-feeder and other services
+- 12.2.28
+
+-------------------------------------------------------------------
 Tue Apr  4 09:15:05 UTC 2017 - mvidner@suse.com
 
 - Include yast2-caasp in the instsys (bsc#1032010).
