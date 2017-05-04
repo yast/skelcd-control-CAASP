@@ -179,6 +179,10 @@ textdomain="control"
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
+                <path>var/lib/dockershim</path>
+                <copy_on_write config:type="boolean">false</copy_on_write>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/kubelet</path>
                 <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
