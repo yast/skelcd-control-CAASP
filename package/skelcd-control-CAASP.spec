@@ -76,6 +76,12 @@ Requires:       rubygem(%{rb_default_ruby_abi}:byebug)
 # Install and enable xrdp by default (FATE#320363)
 Requires:       yast2-rdp
 
+# Ensure no two skelcd-control-* packages can be installed in the same time,
+# an OBS check reports a file conflict for the /CD1/control.xml file from
+# the other packages.
+Conflicts:      product_control
+Provides:       product_control
+
 # Architecture specific packages
 #
 %ifarch s390 s390x
