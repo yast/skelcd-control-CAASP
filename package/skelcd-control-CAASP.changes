@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu May  4 08:47:25 UTC 2017 - lslezak@suse.cz
+
+- The package has been renamed from skelcd-control-CASP to
+  skelcd-control-CAASP (bsc#1037541)
+- 12.2.30
+
+-------------------------------------------------------------------
 Thu May  4 09:48:44 CEST 2017 - shundhammer@suse.de
 
 - Added NoCOW subvolume /var/lib/dockershim (bsc#1037208)

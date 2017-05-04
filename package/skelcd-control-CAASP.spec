@@ -1,5 +1,5 @@
 #
-# spec file for package skelcd-control-CASP
+# spec file for package skelcd-control-CAASP
 #
 # Copyright (c) 2016 SUSE LINUX Products GmbH, Nuernberg, Germany.
 #
@@ -20,14 +20,14 @@
 #
 # IMPORTANT: Please do not change the control file or this spec file
 #   in build service directly, use
-#   https://github.com/yast/skelcd-control-CASP repository
+#   https://github.com/yast/skelcd-control-CAASP repository
 #
-#   See https://github.com/yast/skelcd-control-CASP/blob/master/CONTRIBUTING.md
+#   See https://github.com/yast/skelcd-control-CAASP/blob/master/CONTRIBUTING.md
 #   for more details.
 #
 ######################################################################
 
-Name:           skelcd-control-CASP
+Name:           skelcd-control-CAASP
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
@@ -44,11 +44,13 @@ BuildRequires:  yast2-installation-control >= 3.1.13.2
 Requires:       yast2-registration
 Requires:       yast2-theme-SLE
 
+# the CaaSP specific packages
+Requires:       yast2-caasp
+
 # Generic Yast packages needed for the installer
 Requires:       autoyast2
 Requires:       yast2-add-on
 Requires:       yast2-buildtools
-Requires:       yast2-caasp
 Requires:       yast2-devtools
 Requires:       yast2-fcoe-client
 # For creating the AutoYast profile at the end of installation (bnc#887406)
@@ -87,18 +89,18 @@ Requires:       yast2-vm
 #
 ######################################################################
 
-Url:            https://github.com/yast/skelcd-control-CASP
+Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        12.2.29
+Version:        12.2.30
 Release:        0
-Summary:        CASP control file needed for installation
+Summary:        The CaaSP control file needed for installation
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 
 %description
-CASP control file needed for installation
+The package contains the CaaSP control file needed for installation.
 
 %prep
 
@@ -115,7 +117,7 @@ make -C control check
 # Add control file 
 #
 mkdir -p $RPM_BUILD_ROOT/CD1
-install -m 644 control/control.CASP.xml $RPM_BUILD_ROOT/CD1/control.xml
+install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/CD1/control.xml
 
 # install LICENSE (required by build service check)
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}

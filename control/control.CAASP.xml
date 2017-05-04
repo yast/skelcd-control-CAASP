@@ -113,7 +113,7 @@ textdomain="control"
         <selection_type config:type="symbol">auto</selection_type>
 
         <!-- bnc#875350: Explicitly selecting these patterns by default -->
-        <!-- For a list of patterns, see https://build.suse.de/package/view_file/SUSE:SLE-12-SP2:Update:Products:CASP10/patterns-casp/patterns-casp.spec?expand=1 -->
+        <!-- For a list of patterns, see https://build.suse.de/package/view_file/SUSE:SLE-12-SP2:Update:Products:CASP10/patterns-caasp/patterns-caasp.spec?expand=1 -->
 
         <default_patterns>MicroOS Stack</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
