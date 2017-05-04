@@ -1,1 +1,7 @@
 /package/skelcd-control-*.tar.bz2
+control.pot
+
+# FIXME: remove after switching to the yastdevel/cpp:caasp-1_0 image
+# Travis runs "yardoc" in the shared build script, ignore the fallout of that
+doc
+.yardoc

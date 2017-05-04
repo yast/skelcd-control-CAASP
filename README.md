@@ -1,10 +1,10 @@
-skelcd-control-CASP
+skelcd-control-CAASP
 ===================
 
-[![Travis Build](https://travis-ci.org/yast/skelcd-control-CASP.svg?branch=master)](https://travis-ci.org/yast/skelcd-control-CASP)
+[![Travis Build](https://travis-ci.org/yast/skelcd-control-CAASP.svg?branch=master)](https://travis-ci.org/yast/skelcd-control-CAASP)
 
 
-Installation control file for SUSE Linux Enterprise CASP product
+Installation control file for SUSE Linux Enterprise CaaSP product
 
 See also the [documentation for the `control.xml` file][1].
 
