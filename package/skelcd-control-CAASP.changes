@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue May  9 13:47:02 UTC 2017 - lslezak@suse.cz
+
+- Update the default pattern names (bsc#1038267)
+- Adapt the package to build also for openSUSE
+- 12.2.31
+
+-------------------------------------------------------------------
 Thu May  4 08:47:25 UTC 2017 - lslezak@suse.cz
 
 - The package has been renamed from skelcd-control-CASP to

@@ -1,7 +1,7 @@
 #
 # spec file for package skelcd-control-CAASP
 #
-# Copyright (c) 2016 SUSE LINUX Products GmbH, Nuernberg, Germany.
+# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -42,7 +42,12 @@ BuildRequires:  yast2-installation-control >= 3.1.13.2
 # SLES specific Yast packages needed in the inst-sys
 # to provide the functionality needed by this control file
 Requires:       yast2-registration
+%if 0%{?is_susecaasp}
 Requires:       yast2-theme-SLE
+%else
+Requires:       yast2-branding-openSUSE
+Requires:       yast2-qt-branding-openSUSE
+%endif
 
 # the CaaSP specific packages
 Requires:       yast2-caasp
@@ -97,13 +102,14 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        12.2.30
+Version:        12.2.31
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
+Patch:          control.Kubic.diff
 
 %description
 The package contains the CaaSP control file needed for installation.
@@ -111,6 +117,9 @@ The package contains the CaaSP control file needed for installation.
 %prep
 
 %setup -n %{name}-%{version}
+%if !0%{?is_susecaasp}
+%patch -p0
+%endif
 
 %check
 #
