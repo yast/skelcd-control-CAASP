@@ -4,7 +4,7 @@ skelcd-control-CAASP
 [![Travis Build](https://travis-ci.org/yast/skelcd-control-CAASP.svg?branch=master)](https://travis-ci.org/yast/skelcd-control-CAASP)
 
 
-Installation control file for SUSE Linux Enterprise CaaSP product
+Installation control file for SUSE CaaS Platform product
 
 See also the [documentation for the `control.xml` file][1].
 
