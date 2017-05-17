@@ -160,6 +160,9 @@ textdomain="control"
                 <path>tmp</path>
             </subvolume>
             <subvolume>
+                <path>home</path>
+            </subvolume>
+            <subvolume>
                 <path>cloud-init-config</path>
             </subvolume>
             <subvolume>
