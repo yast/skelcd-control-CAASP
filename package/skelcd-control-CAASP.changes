@@ -8,7 +8,8 @@ Wed May 17 11:46:23 CEST 2017 - shundhammer@suse.de
 Tue May  9 13:47:02 UTC 2017 - lslezak@suse.cz
 
 - Update the default pattern names (bsc#1038267)
-- Adapt the package to build also for openSUSE
+- Adapt the package to build also for openSUSE (added
+  control.Kubic.diff patch)
 - 12.2.31
 
 -------------------------------------------------------------------
