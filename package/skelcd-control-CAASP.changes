@@ -1,3 +1,12 @@
+
+-------------------------------------------------------------------
+Tue Jun 20 11:42:06 UTC 2017 - jsrain@suse.cz
+
+- added subvolume for /var/lib/ca-certificates (bsc#1045125)
+- adjusted NoCoW attributes for subvolumes (bsc#1045125)
+- enable docker on cluster notes (bsc#1045125)
+- 12.2.32
+
 -------------------------------------------------------------------
 Wed May 17 11:46:23 CEST 2017 - shundhammer@suse.de
 
