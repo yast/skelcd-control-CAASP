@@ -175,15 +175,16 @@ textdomain="control"
                 <path>var/spool</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/ca-certificates</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/cloud</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/dockershim</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/kubelet</path>
@@ -274,6 +275,7 @@ textdomain="control"
         <id>worker_role</id>
 
         <services config:type="list">
+          <service><name>docker</name></service>
           <service><name>container-feeder</name></service>
           <service><name>salt-minion</name></service>
         </services>
