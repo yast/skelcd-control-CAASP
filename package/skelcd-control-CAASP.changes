@@ -1,10 +1,15 @@
+-------------------------------------------------------------------
+Fri Jun 23 07:23:49 UTC 2017 - knut.anderssen@suse.com
+
+- Enable salt-minion service in dashboard role (bsc#1045350)
+- 12.2.33
 
 -------------------------------------------------------------------
 Tue Jun 20 11:42:06 UTC 2017 - jsrain@suse.cz
 
 - added subvolume for /var/lib/ca-certificates (bsc#1045125)
 - adjusted NoCoW attributes for subvolumes (bsc#1045125)
-- enable docker on cluster notes (bsc#1045125)
+- enable docker on cluster nodes (bsc#1045125)
 - 12.2.32
 
 -------------------------------------------------------------------
