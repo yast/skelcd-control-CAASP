@@ -133,11 +133,19 @@ textdomain="control"
     </software>
 
     <partitioning>
-        <try_separate_home config:type="boolean">false</try_separate_home>
-        <limit_try_home>5GB</limit_try_home>
-        <root_space_percent>40</root_space_percent>
+        <try_separate_home config:type="boolean">true</try_separate_home>
+        <limit_try_home>40GB</limit_try_home>
+        <!-- use /var/lib/docker as separate partition if 10+ GB available (fate#323532) -->
+        
+        <!-- NOTICE: This is a hack, introduced to make this feature possible
+             against all odds at the very latest stages of CaaSP 1.0
+             development without breaking the entire storage proposal logic.
+             It is strongly advised not to use this in general.
+             Please contact the YaST team if you feel you need this. -->
+        <home_path>/var/lib/docker</home_path>
+        <root_space_percent>75</root_space_percent>
         <root_base_size>10GB</root_base_size>
-        <root_max_size>10GB</root_max_size>
+        <root_max_size>30GB</root_max_size>
         <proposal_lvm config:type="boolean">false</proposal_lvm>
         <vm_desired_size>15GB</vm_desired_size>
         <vm_home_max_size>25GB</vm_home_max_size>

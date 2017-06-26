@@ -31,7 +31,7 @@ Name:           skelcd-control-CAASP
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
-BuildRequires:  yast2-installation-control >= 3.1.13.2
+BuildRequires:  yast2-installation-control >= 3.1.13.11
 
 ######################################################################
 #
@@ -102,7 +102,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        12.2.33
+Version:        12.2.34
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
