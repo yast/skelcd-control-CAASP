@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Jun 26 11:15:57 CEST 2017 - shundhammer@suse.de
+
+- Hack: Use home partition as /var/lib/docker (Fate#323532)
+- 12.2.34
+
+-------------------------------------------------------------------
 Fri Jun 23 07:23:49 UTC 2017 - knut.anderssen@suse.com
 
 - Enable salt-minion service in dashboard role (bsc#1045350)
