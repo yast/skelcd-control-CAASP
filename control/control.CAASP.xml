@@ -277,6 +277,7 @@ textdomain="control"
           <service><name>etcd</name></service>
           <service><name>kubelet</name></service>
           <service><name>salt-minion</name></service>
+          <service><name>admin-node-setup</name></service>
         </services>
       </system_role>
 
