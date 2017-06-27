@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Jun 27 11:02:42 UTC 2017 - jsrain@suse.cz
+
+- added "swapaccount=1" to kernel parameters (fate#323562)
+- 12.2.35
+
+-------------------------------------------------------------------
 Mon Jun 26 11:15:57 CEST 2017 - shundhammer@suse.de
 
 - Hack: Use home partition as /var/lib/docker (Fate#323532)
