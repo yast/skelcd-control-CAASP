@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Jun 27 13:16:11 UTC 2017 - jsrain@suse.cz
+
+- enabled the admin-node-setup service on admin (bsc#1046162)
+- 12.2.36
+
+-------------------------------------------------------------------
 Tue Jun 27 11:02:42 UTC 2017 - jsrain@suse.cz
 
 - added "swapaccount=1" to kernel parameters (fate#323562)
