@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Jul  4 14:17:04 CEST 2017 - shundhammer@suse.de
+
+- Reduce min size to create a separate /var/lib/docker partition 
+  to 35 GB (Fate#323532)
+- 12.2.37
+
+-------------------------------------------------------------------
 Tue Jun 27 13:16:11 UTC 2017 - jsrain@suse.cz
 
 - enabled the admin-node-setup service on admin (bsc#1046162)
