@@ -134,7 +134,7 @@ textdomain="control"
 
     <partitioning>
         <try_separate_home config:type="boolean">true</try_separate_home>
-        <limit_try_home>40GB</limit_try_home>
+        <limit_try_home>35GB</limit_try_home>
         <!-- use /var/lib/docker as separate partition if 10+ GB available (fate#323532) -->
         
         <!-- NOTICE: This is a hack, introduced to make this feature possible
@@ -143,7 +143,7 @@ textdomain="control"
              It is strongly advised not to use this in general.
              Please contact the YaST team if you feel you need this. -->
         <home_path>/var/lib/docker</home_path>
-        <root_space_percent>75</root_space_percent>
+        <root_space_percent>80</root_space_percent>
         <root_base_size>10GB</root_base_size>
         <root_max_size>30GB</root_max_size>
         <proposal_lvm config:type="boolean">false</proposal_lvm>
