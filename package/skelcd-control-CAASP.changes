@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Aug 16 11:35:46 CEST 2017 - shundhammer@suse.de
+
+- Make filesystem type for home and root configurable (bsc#1051762)
+- 12.2.38
+
+-------------------------------------------------------------------
 Tue Jul  4 14:17:04 CEST 2017 - shundhammer@suse.de
 
 - Reduce min size to create a separate /var/lib/docker partition 
