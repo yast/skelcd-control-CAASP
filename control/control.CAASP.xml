@@ -143,6 +143,8 @@ textdomain="control"
              It is strongly advised not to use this in general.
              Please contact the YaST team if you feel you need this. -->
         <home_path>/var/lib/docker</home_path>
+        <home_fs>btrfs</home_fs>
+        <root_fs>btrfs</root_fs>
         <root_space_percent>80</root_space_percent>
         <root_base_size>10GB</root_base_size>
         <root_max_size>30GB</root_max_size>
