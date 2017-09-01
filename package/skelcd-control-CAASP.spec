@@ -132,8 +132,8 @@ make -C control check
 #
 # Add control file 
 #
-mkdir -p $RPM_BUILD_ROOT/CD1
-install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/CD1/control.xml
+mkdir -p $RPM_BUILD_ROOT/usr/lib/skelcd/CD1
+install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/usr/lib/skelcd/CD1/control.xml
 
 # install LICENSE (required by build service check)
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
@@ -141,7 +141,8 @@ install -m 644 LICENSE $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
 
 %files
 %defattr(644,root,root,755)
-/CD1
+%dir /usr/lib/skelcd
+/usr/lib/skelcd/CD1
 %doc %dir %{_prefix}/share/doc/packages/%{name}
 %doc %{_prefix}/share/doc/packages/%{name}/LICENSE
 
