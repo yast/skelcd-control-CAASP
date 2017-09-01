@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Sep  1 10:36:24 UTC 2017 - lslezak@suse.cz
+
+- Added yast2-s390 dependency to fix failed disk activation
+  (bsc#1055871)
+- 15.0.0
+
+-------------------------------------------------------------------
 Wed Aug 16 11:35:46 CEST 2017 - shundhammer@suse.de
 
 - Make filesystem type for home and root configurable (bsc#1051762)

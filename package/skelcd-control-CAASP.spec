@@ -91,6 +91,7 @@ Provides:       product_control
 #
 %ifarch s390 s390x
 Requires:       yast2-reipl >= 3.1.4
+Requires:       yast2-s390
 %endif
 
 %ifarch %ix86 x86_64
@@ -102,7 +103,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        12.2.38
+Version:        15.0.0
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT

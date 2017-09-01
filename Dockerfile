@@ -1,4 +1,2 @@
-# FIXME: switch to yastdevel/cpp:caasp-1_0 when available to avoid running
-# useless Ruby checks
-FROM yastdevel/ruby:caasp-1_0
+FROM yastdevel/ruby
 COPY . /usr/src/app
