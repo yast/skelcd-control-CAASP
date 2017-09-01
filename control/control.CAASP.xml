@@ -9,7 +9,7 @@ textdomain="control"
     <textdomain>control</textdomain>
 
     <globals>
-        <additional_kernel_parameters/>
+        <additional_kernel_parameters>swapaccount=1</additional_kernel_parameters>
         <enable_autologin config:type="boolean">false</enable_autologin>
         <enable_firewall config:type="boolean">false</enable_firewall>
         <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
@@ -133,11 +133,21 @@ textdomain="control"
     </software>
 
     <partitioning>
-        <try_separate_home config:type="boolean">false</try_separate_home>
-        <limit_try_home>5GB</limit_try_home>
-        <root_space_percent>40</root_space_percent>
+        <try_separate_home config:type="boolean">true</try_separate_home>
+        <limit_try_home>35GB</limit_try_home>
+        <!-- use /var/lib/docker as separate partition if 10+ GB available (fate#323532) -->
+        
+        <!-- NOTICE: This is a hack, introduced to make this feature possible
+             against all odds at the very latest stages of CaaSP 1.0
+             development without breaking the entire storage proposal logic.
+             It is strongly advised not to use this in general.
+             Please contact the YaST team if you feel you need this. -->
+        <home_path>/var/lib/docker</home_path>
+        <home_fs>btrfs</home_fs>
+        <root_fs>btrfs</root_fs>
+        <root_space_percent>80</root_space_percent>
         <root_base_size>10GB</root_base_size>
-        <root_max_size>10GB</root_max_size>
+        <root_max_size>30GB</root_max_size>
         <proposal_lvm config:type="boolean">false</proposal_lvm>
         <vm_desired_size>15GB</vm_desired_size>
         <vm_home_max_size>25GB</vm_home_max_size>
@@ -175,15 +185,16 @@ textdomain="control"
                 <path>var/spool</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/ca-certificates</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/cloud</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/dockershim</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
             </subvolume>
             <subvolume>
                 <path>var/lib/kubelet</path>
@@ -267,6 +278,8 @@ textdomain="control"
           <service><name>docker</name></service>
           <service><name>etcd</name></service>
           <service><name>kubelet</name></service>
+          <service><name>salt-minion</name></service>
+          <service><name>admin-node-setup</name></service>
         </services>
       </system_role>
 
@@ -274,6 +287,7 @@ textdomain="control"
         <id>worker_role</id>
 
         <services config:type="list">
+          <service><name>docker</name></service>
           <service><name>container-feeder</name></service>
           <service><name>salt-minion</name></service>
         </services>
