@@ -58,6 +58,11 @@ Tue Jun 20 11:42:06 UTC 2017 - jsrain@suse.cz
 - 12.2.32
 
 -------------------------------------------------------------------
+Wed May 24 14:51:45 CEST 2017 - behlert@suse.de
+
+- /usr/lib/skelcd/CD1 instead of /CD1 
+
+-------------------------------------------------------------------
 Wed May 17 11:46:23 CEST 2017 - shundhammer@suse.de
 
 - Added subvolume /home (bsc#1039237)
