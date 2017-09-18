@@ -1,6 +1,6 @@
 --- control/control.CAASP.xml
-+++ control/control.CAASP.xml   2017/06/20 11:05:54
-@@ -264,7 +264,6 @@ 
++++ control/control.CAASP.xml	2017-09-14 22:58:46.070463194 +0200
+@@ -274,12 +274,10 @@
          <id>dashboard_role</id>
  
          <services config:type="list">
@@ -8,7 +8,12 @@
            <service><name>docker</name></service>
            <service><name>etcd</name></service>
            <service><name>kubelet</name></service>
-@@ -276,7 +275,6 @@ 
+           <service><name>salt-minion</name></service>
+-          <service><name>admin-node-setup</name></service>
+         </services>
+       </system_role>
+ 
+@@ -288,7 +286,6 @@
  
          <services config:type="list">
            <service><name>docker</name></service>

@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Sep 18 12:35:24 UTC 2017 - rbrown@suse.com
+
+- Adjust control.Kubic.diff, remove non-existing admin-node-setup
+  service (bsc#1058749)
+- 15.0.1
+
+-------------------------------------------------------------------
 Fri Sep  1 10:36:24 UTC 2017 - lslezak@suse.cz
 
 - Added yast2-s390 dependency to fix failed disk activation
