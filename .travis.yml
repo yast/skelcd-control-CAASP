@@ -7,4 +7,7 @@ before_install:
   - docker build -t skelcd-control-caasp-image .
 
 script:
-  - docker run -it -e TRAVIS=1 -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" skelcd-control-caasp-image ./.travis.sh
+  # the builds can run sequentially, the build in Docker is fast and Docker isolates
+  # the containers (the second run has the very same initial image as the first run)
+  - docker run -it -e TRAVIS=1 -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e BUILD_FLAVOR=caasp skelcd-control-caasp-image ./.travis.sh
+  - docker run -it -e TRAVIS=1 -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e BUILD_FLAVOR=kubic skelcd-control-caasp-image ./.travis.sh
