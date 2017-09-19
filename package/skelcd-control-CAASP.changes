@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Sep 18 14:40:15 UTC 2017 - lslezak@suse.cz
+
+- Adjust the install path for Kubic (openSUSE still uses the old
+  product builder in OBS)
+
+-------------------------------------------------------------------
 Mon Sep 18 12:35:24 UTC 2017 - rbrown@suse.com
 
 - Adjust control.Kubic.diff, remove non-existing admin-node-setup
