@@ -33,6 +33,12 @@ BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 3.1.13.12
 
+%if !0%{?is_susecaasp}
+# xsltproc - for building control.Kubic.xml from control.CAASP.xml
+BuildRequires:  libxslt-tools
+BuildRequires:  diffutils
+%endif
+
 ######################################################################
 #
 # Here is the list of Yast packages which are needed in the
@@ -103,14 +109,13 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.1
+Version:        15.0.2
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
-Patch:          control.Kubic.diff
 
 %description
 The package contains the CaaSP control file needed for installation.
@@ -118,8 +123,14 @@ The package contains the CaaSP control file needed for installation.
 %prep
 
 %setup -n %{name}-%{version}
+
 %if !0%{?is_susecaasp}
-%patch -p0
+%build
+# build control.Kubic.xml from control.CAASP.xml
+make -C control control.Kubic.xml
+# display the changes (just for easier debugging)
+# don't fail, a difference is expected
+diff -u control/control.CAASP.xml control/control.Kubic.xml || :
 %endif
 
 %check
@@ -137,7 +148,7 @@ mkdir -p $RPM_BUILD_ROOT/usr/lib/skelcd/CD1
 install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/usr/lib/skelcd/CD1/control.xml
 %else
 mkdir -p $RPM_BUILD_ROOT/CD1
-install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/CD1/control.xml
+install -m 644 control/control.Kubic.xml $RPM_BUILD_ROOT/CD1/control.xml
 %endif
 
 # install LICENSE (required by build service check)

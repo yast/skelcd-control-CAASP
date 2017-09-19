@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Sep 19 08:13:49 UTC 2017 - lslezak@suse.cz
+
+- Patch control.Kubic.xml using a XSL file, that's more robust
+  then a plain text diff (bsc#1059299)
+- 15.0.2
+
+-------------------------------------------------------------------
 Mon Sep 18 14:40:15 UTC 2017 - lslezak@suse.cz
 
 - Adjust the install path for Kubic (openSUSE still uses the old
