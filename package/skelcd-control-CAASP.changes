@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Sep 21 07:34:53 UTC 2017 - jreidinger@suse.cz
+
+- Adapt to changes in roles (needed for fixing bsc#1049297)
+- 15.0.3
+
+-------------------------------------------------------------------
 Tue Sep 19 08:13:49 UTC 2017 - lslezak@suse.cz
 
 - Patch control.Kubic.xml using a XSL file, that's more robust
