@@ -281,6 +281,8 @@ textdomain="control"
           <service><name>salt-minion</name></service>
           <service><name>admin-node-setup</name></service>
         </services>
+
+        <order config:type="integer">100</order>
       </system_role>
 
       <system_role>
@@ -291,10 +293,14 @@ textdomain="control"
           <service><name>container-feeder</name></service>
           <service><name>salt-minion</name></service>
         </services>
+
+        <order config:type="integer">200</order>
       </system_role>
 
       <system_role>
         <id>none_role</id>
+
+        <order config:type="integer">300</order>
       </system_role>
     </system_roles>
 
