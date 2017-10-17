@@ -133,131 +133,157 @@ textdomain="control"
     </software>
 
     <partitioning>
-        <try_separate_home config:type="boolean">true</try_separate_home>
-        <limit_try_home>35GB</limit_try_home>
-        <!-- use /var/lib/docker as separate partition if 10+ GB available (fate#323532) -->
-        
-        <!-- NOTICE: This is a hack, introduced to make this feature possible
-             against all odds at the very latest stages of CaaSP 1.0
-             development without breaking the entire storage proposal logic.
-             It is strongly advised not to use this in general.
-             Please contact the YaST team if you feel you need this. -->
-        <home_path>/var/lib/docker</home_path>
-        <home_fs>btrfs</home_fs>
-        <root_fs>btrfs</root_fs>
-        <root_space_percent>80</root_space_percent>
-        <root_base_size>10GB</root_base_size>
-        <root_max_size>30GB</root_max_size>
-        <proposal_lvm config:type="boolean">false</proposal_lvm>
-        <vm_desired_size>15GB</vm_desired_size>
-        <vm_home_max_size>25GB</vm_home_max_size>
-        <!-- always propose snapper enabled, therefore no increase (bsc#1019652) -->
-        <btrfs_increase_percentage config:type="integer">0</btrfs_increase_percentage>
-        <!-- the default subvolume "@" was requested by product management -->
-        <btrfs_default_subvolume>@</btrfs_default_subvolume>
-        <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
-        <root_subvolume_read_only config:type="boolean">true</root_subvolume_read_only>
 
-        <!-- Subvolumes to be created for a Btrfs root file system -->
-        <!-- copy_on_write is true by default -->
-        <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
-        <subvolumes config:type="list">
-            <subvolume>
-                <path>root</path>
-            </subvolume>
-            <subvolume>
-                <path>tmp</path>
-            </subvolume>
-            <subvolume>
-                <path>home</path>
-            </subvolume>
-            <subvolume>
-                <path>cloud-init-config</path>
-            </subvolume>
-            <subvolume>
-                <path>var/cache</path>
-            </subvolume>
-            <subvolume>
-                <path>var/crash</path>
-            </subvolume>
-            <subvolume>
-                <path>var/spool</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/ca-certificates</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/cloud</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/docker</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/dockershim</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/kubelet</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/mysql</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/ntp</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/etcd</path>
-                <copy_on_write config:type="boolean">false</copy_on_write>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/overlay</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/systemd</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/vmware</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/wicked</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/machines</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/misc</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/nfs</path>
-            </subvolume>
-            <subvolume>
-                <path>var/lib/rollback</path>
-            </subvolume>
-            <subvolume>
-                <path>var/log</path>
-            </subvolume>
-            <subvolume>
-                <path>var/tmp</path>
-            </subvolume>
+        <proposal>
+            <lvm config:type="boolean">false</lvm>
+            <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
+            <root_subvolume_read_only config:type="boolean">true</root_subvolume_read_only>
+        </proposal>
 
-            <!-- architecture specific subvolumes -->
+        <volumes config:type="list">
+            <!-- The / filesystem -->
+            <volume>
+                <mount_point>/</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <desired_size config:type="disksize">15 GiB</desired_size>
+                <min_size config:type="disksize">10 GiB</min_size>
+                <max_size config:type="disksize">30 GiB</max_size>
+                <weight config:type="integer">80</weight>
+                <!-- Always use snapshots, no matter what -->
+                <snapshots config:type="boolean">true</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
 
-            <subvolume>
-                <path>boot/grub2/i386-pc</path>
-                <archs>x86_64</archs>
-            </subvolume>
-            <subvolume>
-                <path>boot/grub2/x86_64-efi</path>
-                <archs>x86_64</archs>
-            </subvolume>
-            <subvolume>
-                <path>boot/grub2/x86_64-efi</path>
-                <archs>x86_64</archs>
-            </subvolume>
-        </subvolumes>
+                <!-- the default subvolume "@" was requested by product management -->
+                <btrfs_default_subvolume>@</btrfs_default_subvolume>
 
+                <!-- Subvolumes to be created for a Btrfs root file system -->
+                <!-- copy_on_write is true by default -->
+                <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
+                <subvolumes config:type="list">
+                    <subvolume>
+                        <path>root</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>tmp</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>home</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>cloud-init-config</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/cache</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/crash</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/spool</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/ca-certificates</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/cloud</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/docker</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/dockershim</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/kubelet</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/mysql</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/ntp</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/etcd</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/overlay</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/systemd</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/vmware</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/wicked</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/machines</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/misc</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/nfs</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/lib/rollback</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/log</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>var/tmp</path>
+                    </subvolume>
+
+                    <!-- architecture specific subvolumes -->
+
+                    <subvolume>
+                        <path>boot/grub2/i386-pc</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/x86_64-efi</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/x86_64-efi</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                </subvolumes>
+            </volume>
+
+            <!-- use /var/lib/docker as separate partition if 10+ GB available (fate#323532) -->
+            <volume>
+                <mount_point>/var/lib/docker</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <snapshots config:type="boolean">false</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
+
+                <desired_size config:type="disksize">15 GiB</desired_size>
+                <min_size config:type="disksize">10 GiB</min_size>
+                <max_size config:type="disksize">25 GiB</max_size>
+                <weight config:type="integer">20</weight>
+
+                <!-- Give up in a separate partition if the min size doesn't fit -->
+                <proposed config:type="boolean">true</proposed>
+                <proposed_configurable config:type="boolean">true</proposed_configurable>
+                <disable_order config:type="integer">1</disable_order>
+                <!-- If this volume is disabled, we want "/" to increase -->
+                <fallback_for_desired_size>/</fallback_for_desired_size>
+                <fallback_for_min_size>/</fallback_for_min_size>
+                <fallback_for_max_size>/</fallback_for_max_size>
+                <fallback_for_weight>/</fallback_for_weight>
+            </volume>
+
+            <!-- No swap partition is defined, so it's never created -->
+        </volumes>
     </partitioning>
 
     <network>
