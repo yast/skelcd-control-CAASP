@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Oct 23 17:22:58 CEST 2017 - snwint@suse.de
+
+- Use new storage-ng elements for partitioning in control.xml (fate#318196)
+- 15.0.4
+
+-------------------------------------------------------------------
 Thu Sep 21 07:34:53 UTC 2017 - jreidinger@suse.cz
 
 - Adapt to changes in roles (needed for fixing bsc#1049297)
