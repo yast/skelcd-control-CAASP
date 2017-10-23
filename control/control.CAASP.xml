@@ -155,6 +155,9 @@ textdomain="control"
                 <snapshots config:type="boolean">true</snapshots>
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
 
+                <!-- You don't want to miss the / volume -->
+                <proposed_configurable config:type="boolean">false</proposed_configurable>
+
                 <!-- the default subvolume "@" was requested by product management -->
                 <btrfs_default_subvolume>@</btrfs_default_subvolume>
 
@@ -272,12 +275,10 @@ textdomain="control"
                 <weight config:type="integer">20</weight>
 
                 <!-- Give up in a separate partition if the min size doesn't fit -->
-                <proposed config:type="boolean">true</proposed>
-                <proposed_configurable config:type="boolean">true</proposed_configurable>
                 <disable_order config:type="integer">1</disable_order>
+
                 <!-- If this volume is disabled, we want "/" to increase -->
                 <fallback_for_desired_size>/</fallback_for_desired_size>
-                <fallback_for_min_size>/</fallback_for_min_size>
                 <fallback_for_max_size>/</fallback_for_max_size>
                 <fallback_for_weight>/</fallback_for_weight>
             </volume>
