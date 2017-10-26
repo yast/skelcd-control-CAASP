@@ -247,16 +247,24 @@ textdomain="control"
                     <!-- architecture specific subvolumes -->
 
                     <subvolume>
+                        <path>boot/grub2/arm64-efi</path>
+                        <archs>aarch64</archs>
+                    </subvolume>
+                    <subvolume>
                         <path>boot/grub2/i386-pc</path>
                         <archs>x86_64</archs>
                     </subvolume>
                     <subvolume>
-                        <path>boot/grub2/x86_64-efi</path>
-                        <archs>x86_64</archs>
+                        <path>boot/grub2/powerpc-ieee1275</path>
+                        <archs>ppc,!board_powernv</archs>
                     </subvolume>
                     <subvolume>
                         <path>boot/grub2/s390x-emu</path>
                         <archs>s390</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/x86_64-efi</path>
+                        <archs>x86_64</archs>
                     </subvolume>
                 </subvolumes>
             </volume>

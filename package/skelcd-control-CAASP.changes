@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Oct 26 15:15:58 CEST 2017 - snwint@suse.de
+
+- adjust subvolume list in control.xml to support all archs (fate#318196)
+- 15.0.5
+
+-------------------------------------------------------------------
 Mon Oct 23 17:22:58 CEST 2017 - snwint@suse.de
 
 - Use new storage-ng elements for partitioning in control.xml (fate#318196)
