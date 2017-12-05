@@ -4,7 +4,7 @@ check: /usr/share/YaST2/control/control.rng
 	xmllint --relaxng /usr/share/YaST2/control/control.rng --noout *.xml
 
 # generate the control.Kubic.xml file
-control.Kubic.xml: control.Kubic.xsl control.CAASP.xml
+control.Kubic.xml: control.Kubic.xsl control.CAASP.xml /usr/lib/skelcd/CD1/control.xml
 	xsltproc control.Kubic.xsl control.CAASP.xml > control.Kubic.xml
 
 clean:

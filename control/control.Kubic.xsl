@@ -22,4 +22,12 @@
   <!-- a trick to remove the remaining empty line after node removal -->
   <xsl:template match="text()[following-sibling::node()[1][self::n:service[n:name='admin-node-setup']]]" />
 
+  <!-- Add the "extra_urls" part from the normal openSUSE control file -->
+  <xsl:template match="n:software">
+    <xsl:copy>
+      <xsl:apply-templates select="node()|@*"/>
+      <!-- Make sure this is the openSUSE control file! -->
+      <xsl:copy-of select="document('/usr/lib/skelcd/CD1/control.xml')/*/n:software/n:extra_urls"/>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

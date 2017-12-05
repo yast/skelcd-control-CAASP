@@ -37,6 +37,8 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 # xsltproc - for building control.Kubic.xml from control.CAASP.xml
 BuildRequires:  libxslt-tools
 BuildRequires:  diffutils
+# we need to copy some parts from the openSUSE control.xml to Kubic
+BuildRequires:  skelcd-control-openSUSE
 %endif
 
 ######################################################################
@@ -109,7 +111,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.5
+Version:        15.0.6
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
