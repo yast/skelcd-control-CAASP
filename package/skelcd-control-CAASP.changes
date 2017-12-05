@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Dec  5 08:31:11 UTC 2017 - lslezak@suse.cz
+
+- openSUSE Kubic: copy "extra_urls" configuration from the standard
+  openSUSE product (bsc#1071217)
+- 15.0.6
+
+-------------------------------------------------------------------
 Thu Oct 26 15:15:58 CEST 2017 - snwint@suse.de
 
 - adjust subvolume list in control.xml to support all archs (fate#318196)
