@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Dec 12 17:11:12 UTC 2017 - rbrown@suse.com
+
+- adjust subvolume list to have NoCOW /var instead of many 
+  subvolumes (boo#1075369)
+- 15.0.7
+
+-------------------------------------------------------------------
 Tue Dec  5 08:31:11 UTC 2017 - lslezak@suse.cz
 
 - openSUSE Kubic: copy "extra_urls" configuration from the standard
@@ -59,7 +66,7 @@ Wed Aug 16 11:35:46 CEST 2017 - shundhammer@suse.de
 -------------------------------------------------------------------
 Tue Jul  4 14:17:04 CEST 2017 - shundhammer@suse.de
 
-- Reduce min size to create a separate /var/lib/docker partition 
+- Reduce min size to create a separate /var/lib/docker partition
   to 35 GB (Fate#323532)
 - 12.2.37
 
@@ -98,7 +105,7 @@ Tue Jun 20 11:42:06 UTC 2017 - jsrain@suse.cz
 -------------------------------------------------------------------
 Wed May 24 14:51:45 CEST 2017 - behlert@suse.de
 
-- /usr/lib/skelcd/CD1 instead of /CD1 
+- /usr/lib/skelcd/CD1 instead of /CD1
 
 -------------------------------------------------------------------
 Wed May 17 11:46:23 CEST 2017 - shundhammer@suse.de
@@ -125,7 +132,7 @@ Thu May  4 08:47:25 UTC 2017 - lslezak@suse.cz
 Thu May  4 09:48:44 CEST 2017 - shundhammer@suse.de
 
 - Added NoCOW subvolume /var/lib/dockershim (bsc#1037208)
-- 12.2.29 
+- 12.2.29
 
 -------------------------------------------------------------------
 Tue Apr  4 13:06:02 UTC 2017 - mvidner@suse.com
@@ -251,7 +258,7 @@ Wed Dec 14 12:31:14 UTC 2016 - kanderssen@suse.com
 Wed Dec 14 12:30:32 CET 2016 - shundhammer@suse.de
 
 - Added new parameter for CASP read-only Btrfs root subvolume
-  (Fate#321755) 
+  (Fate#321755)
 - 12.2.10
 
 -------------------------------------------------------------------
