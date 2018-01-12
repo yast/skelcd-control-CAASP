@@ -33,7 +33,7 @@ BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 4.0.0
 
-%if !0%{?is_susecaasp}
+%if 0%{?is_opensuse}
 # xsltproc - for building control.Kubic.xml from control.CAASP.xml
 BuildRequires:  libxslt-tools
 BuildRequires:  diffutils
@@ -111,7 +111,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.7
+Version:        15.0.8
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
@@ -126,7 +126,7 @@ The package contains the CaaSP control file needed for installation.
 
 %setup -n %{name}-%{version}
 
-%if !0%{?is_susecaasp}
+%if 0%{?is_opensuse}
 %build
 # build control.Kubic.xml from control.CAASP.xml
 make -C control control.Kubic.xml
