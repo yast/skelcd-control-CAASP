@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Jan 15 12:39:58 UTC 2018 - jreidinger@suse.com
+
+- added subvolume /var/lib/cni (bsc#1075987)
+- 12.2.34
+
+-------------------------------------------------------------------
 Fri Dec 15 12:57:31 UTC 2017 - igonzalezsosa@suse.com
 
 - Added subvolume /opt (bsc#1072905)
