@@ -180,6 +180,10 @@ textdomain="control"
             <subvolume>
                 <path>var/lib/cloud</path>
             </subvolume>
+            <!-- kubernetes needs to write to cni directory (bsc#1075987) -->
+            <subvolume>
+                <path>var/lib/cni</path>
+            </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
                 <copy_on_write config:type="boolean">false</copy_on_write>
