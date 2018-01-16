@@ -111,13 +111,17 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.9
+Version:        15.0.10
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
+
+%if 0%{?suse_version} >= 1500 && !0%{?skelcd_compat}
+%define skelcdpath /usr/lib/skelcd
+%endif
 
 %description
 The package contains the CaaSP control file needed for installation.
@@ -145,13 +149,12 @@ make -C control check
 #
 # Add control file 
 #
+mkdir -p $RPM_BUILD_ROOT%{?skelcdpath}/CD1
 %if 0%{?is_susecaasp}
-mkdir -p $RPM_BUILD_ROOT/usr/lib/skelcd/CD1
-install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/usr/lib/skelcd/CD1/control.xml
+install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT%{?skelcdpath}/CD1/control.xml
 %else
 %if 0%{?is_opensuse}
-mkdir -p $RPM_BUILD_ROOT/CD1
-install -m 644 control/control.Kubic.xml $RPM_BUILD_ROOT/CD1/control.xml
+install -m 644 control/control.Kubic.xml $RPM_BUILD_ROOT%{?skelcdpath}/CD1/control.xml
 %endif
 %endif
 
@@ -162,12 +165,11 @@ install -m 644 LICENSE $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
 
 %files
 %defattr(644,root,root,755)
-%if 0%{?is_susecaasp}
-%dir /usr/lib/skelcd
-/usr/lib/skelcd/CD1
-%else
-/CD1
+%if %{defined skelcdpath}
+%dir %{skelcdpath}
 %endif
+%dir %{?skelcdpath}/CD1
+%{?skelcdpath}/CD1/control.xml
 %doc %dir %{_prefix}/share/doc/packages/%{name}
 %doc %{_prefix}/share/doc/packages/%{name}/LICENSE
 

@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Jan 16 14:37:52 UTC 2018 - rbrown@suse.com
+
+- use Tumbleweed style skelcdpath control file location macros
+  (boo#1076173)
+- 15.0.10
+
+-------------------------------------------------------------------
 Tue Jan 16 12:18:12 UTC 2018 - rbrown@suse.com
 
 - correct spec to not install control file in SLE 15 staging
