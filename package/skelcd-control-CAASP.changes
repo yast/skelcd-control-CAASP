@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Mon Jan 15 12:39:58 UTC 2018 - jreidinger@suse.com
+
+- added subvolume /var/lib/cni (bsc#1075987)
+- 12.2.39
+
+-------------------------------------------------------------------
+Fri Dec 15 12:57:31 UTC 2017 - igonzalezsosa@suse.com
+
+- Added subvolume /opt (bsc#1072905)
+
+-------------------------------------------------------------------
 Wed Aug 16 11:35:46 CEST 2017 - shundhammer@suse.de
 
 - Make filesystem type for home and root configurable (bsc#1051762)
@@ -7,7 +18,7 @@ Wed Aug 16 11:35:46 CEST 2017 - shundhammer@suse.de
 -------------------------------------------------------------------
 Tue Jul  4 14:17:04 CEST 2017 - shundhammer@suse.de
 
-- Reduce min size to create a separate /var/lib/docker partition 
+- Reduce min size to create a separate /var/lib/docker partition
   to 35 GB (Fate#323532)
 - 12.2.37
 
@@ -47,7 +58,7 @@ Tue Jun 20 11:42:06 UTC 2017 - jsrain@suse.cz
 Wed May 17 11:46:23 CEST 2017 - shundhammer@suse.de
 
 - Added subvolume /home (bsc#1039237)
-- 12.2.31
+- 12.2.32
 
 -------------------------------------------------------------------
 Tue May  9 13:47:02 UTC 2017 - lslezak@suse.cz

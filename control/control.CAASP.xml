@@ -173,6 +173,9 @@ textdomain="control"
                 <path>home</path>
             </subvolume>
             <subvolume>
+                <path>opt</path>
+            </subvolume>
+            <subvolume>
                 <path>cloud-init-config</path>
             </subvolume>
             <subvolume>
@@ -189,6 +192,10 @@ textdomain="control"
             </subvolume>
             <subvolume>
                 <path>var/lib/cloud</path>
+            </subvolume>
+            <!-- kubernetes needs to write to cni directory (bsc#1075987) -->
+            <subvolume>
+                <path>var/lib/cni</path>
             </subvolume>
             <subvolume>
                 <path>var/lib/docker</path>
