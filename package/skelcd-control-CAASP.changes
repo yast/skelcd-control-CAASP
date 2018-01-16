@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Jan 16 12:18:12 UTC 2018 - rbrown@suse.com
+
+- correct spec to not install control file in SLE 15 staging
+  (boo#1076173)
+- 15.0.9
+
+-------------------------------------------------------------------
 Fri Jan 12 13:49:33 UTC 2018 - rbrown@suse.com
 
 - correct Kubic.xsl related spec refs to use %is_opensuse instead
