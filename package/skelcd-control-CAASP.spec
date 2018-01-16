@@ -111,7 +111,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.8
+Version:        15.0.9
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
@@ -149,9 +149,12 @@ make -C control check
 mkdir -p $RPM_BUILD_ROOT/usr/lib/skelcd/CD1
 install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT/usr/lib/skelcd/CD1/control.xml
 %else
+%if 0%{?is_opensuse}
 mkdir -p $RPM_BUILD_ROOT/CD1
 install -m 644 control/control.Kubic.xml $RPM_BUILD_ROOT/CD1/control.xml
 %endif
+%endif
+
 
 # install LICENSE (required by build service check)
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
