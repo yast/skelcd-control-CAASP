@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Jan 16 17:01:09 UTC 2018 - rbrown@suse.com
+
+- do not define control.xml in %files when not CaaSP or openSUSE
+  (boo#1076173)
+- 15.0.11
+
+-------------------------------------------------------------------
 Tue Jan 16 14:37:52 UTC 2018 - rbrown@suse.com
 
 - use Tumbleweed style skelcdpath control file location macros
