@@ -115,7 +115,7 @@ textdomain="control"
         <!-- bnc#875350: Explicitly selecting these patterns by default -->
         <!-- For a list of patterns, see https://build.suse.de/package/view_file/SUSE:SLE-12-SP2:Update:Products:CASP10/patterns-caasp/patterns-caasp.spec?expand=1 -->
 
-        <default_patterns>SUSE-MicroOS SUSE-CaaSP-hardware SUSE-CaaSP-apparmor SUSE-CaaSP-Stack</default_patterns>
+        <default_patterns>SUSE-MicroOS SUSE-MicroOS-hardware SUSE-MicroOS-apparmor SUSE-CaaSP-Stack</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -276,6 +276,16 @@ textdomain="control"
 
         <order config:type="integer">300</order>
 
+      </system_role>
+
+      <system_role>
+        <id>micro_os_role</id>
+
+	<order config:type="integer">400</order>
+
+        <software>
+            <default_patterns>SUSE-MicroOS SUSE-MicroOS-hardware SUSE-MicroOS-apparmor</default_patterns>
+        </software>
         <partitioning>
             <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
 
@@ -355,8 +365,6 @@ textdomain="control"
                 <!-- No swap partition is defined, so it's never created -->
             </volumes>
         </partitioning>
-
-
 
       </system_role>
     </system_roles>
@@ -445,6 +453,13 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         <none_role_description>
           <label>• No services started by default.</label>
         </none_role_description>
+        <micro_os_role>
+          <!-- TRANSLATORS: a label for a system role -->
+          <label>SUSE Micro OS</label>
+        </micro_os_role>
+        <micro_os_role_description>
+          <label>• No services started by default.</label>
+        </micro_os_role_description>
     </texts>
 
     <workflows config:type="list">
