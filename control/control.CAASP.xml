@@ -455,7 +455,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         </none_role_description>
         <micro_os_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>SUSE Micro OS</label>
+          <label>SUSE MicroOS</label>
         </micro_os_role>
         <micro_os_role_description>
           <label>• No services started by default.</label>
