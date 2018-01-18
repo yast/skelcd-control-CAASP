@@ -31,4 +31,11 @@
       <xsl:copy-of select="document('/CD1/control.xml')/*/n:software/n:extra_urls"/>
     </xsl:copy>
   </xsl:template>
+
+  <xsl:template match="n:micro_os_role"/>
+    <xsl:element name="label">
+      <xsl:text>openSUSE Micro OS</xsl:text>
+    </xsl:element>
+  </xsl:template>
+
 </xsl:stylesheet>
