@@ -40,7 +40,7 @@
 
   <xsl:template match="n:micro_os_role">
     <micro_os_role>
-      <label>openSUSE Micro OS</label>
+      <label>openSUSE MicroOS</label>
     </micro_os_role>
   </xsl:template>
 
