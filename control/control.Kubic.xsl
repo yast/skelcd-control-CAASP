@@ -2,7 +2,13 @@
   Definition of the control.CAASP.xml -> control.Kubic.xml transformation.
 -->
 
-<xsl:stylesheet version="1.0" xmlns:n="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"
+  xmlns:n="http://www.suse.com/1.0/yast2ns"
+  xmlns:config="http://www.suse.com/1.0/configns"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.suse.com/1.0/yast2ns"
+  exclude-result-prefixes="n"
+>
 
   <xsl:output method="xml" indent="yes"/>
 
@@ -32,10 +38,10 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="n:micro_os_role"/>
-    <xsl:element name="label">
-      <xsl:text>openSUSE Micro OS</xsl:text>
-    </xsl:element>
+  <xsl:template match="n:micro_os_role">
+    <micro_os_role>
+      <label>openSUSE Micro OS</label>
+    </micro_os_role>
   </xsl:template>
 
 </xsl:stylesheet>
