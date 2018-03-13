@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Mar 13 08:54:10 UTC 2018 - igonzalezsosa@suse.com
+
+- Replace root_subvolume_read_only with btrfs_read_only (related
+  to bsc#1079000).
+- 15.0.14
+
+-------------------------------------------------------------------
 Fri Jan 26 08:31:39 UTC 2018 - jsrain@suse.cz
 
 - always use 'zypper dup' equivalent when doing upgrade
