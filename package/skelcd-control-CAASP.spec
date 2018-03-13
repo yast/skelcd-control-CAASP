@@ -31,7 +31,7 @@ Name:           skelcd-control-CAASP
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
-BuildRequires:  yast2-installation-control >= 4.0.0
+BuildRequires:  yast2-installation-control >= 4.0.10
 
 %if 0%{?is_opensuse}
 # xsltproc - for building control.Kubic.xml from control.CAASP.xml
