@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Mar 23 07:25:26 UTC 2018 - jsrain@suse.cz
+
+- added subvolume for /var/lib/containers (bsc#1084469)
+- 12.2.40
+
+-------------------------------------------------------------------
 Mon Jan 15 12:39:58 UTC 2018 - jreidinger@suse.com
 
 - added subvolume /var/lib/cni (bsc#1075987)

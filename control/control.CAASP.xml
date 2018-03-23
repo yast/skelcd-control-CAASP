@@ -201,6 +201,9 @@ textdomain="control"
                 <path>var/lib/docker</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/containers</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/dockershim</path>
             </subvolume>
             <subvolume>
