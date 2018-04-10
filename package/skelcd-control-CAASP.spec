@@ -106,12 +106,16 @@ Requires:       yast2-s390
 Requires:       yast2-vm
 %endif
 
+# SUSEConnect does not build for i586 and s390 and is not supported on those architectures
+# bsc#1088552 so also yast2-registration is not there.
+ExcludeArch:    %ix86 s390
+
 #
 ######################################################################
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.14
+Version:        15.0.15
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
