@@ -14,7 +14,8 @@ textdomain="control"
         <enable_firewall config:type="boolean">false</enable_firewall>
         <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
         <enable_sshd config:type="boolean">true</enable_sshd>
-        <readonly_timezone config:type="boolean">true</readonly_timezone>
+        <timezone>UTC</timezone>
+        <readonly_timezone config:type="boolean">false</readonly_timezone>
 
         <!-- FATE #303875, see /etc/sysconfig/network/dhcp:WRITE_HOSTNAME_TO_HOSTS -->
         <write_hostname_to_hosts config:type="boolean">false</write_hostname_to_hosts>
@@ -108,7 +109,7 @@ textdomain="control"
         <!-- bnc#875350: Explicitly selecting these patterns by default -->
         <!-- For a list of patterns, see https://build.suse.de/package/view_file/SUSE:SLE-12-SP2:Update:Products:CASP10/patterns-caasp/patterns-caasp.spec?expand=1 -->
 
-        <default_patterns>SUSE-MicroOS SUSE-MicroOS-hardware SUSE-MicroOS-apparmor SUSE-CaaSP-Stack</default_patterns>
+        <default_patterns>SUSE-MicroOS SUSE-MicroOS-hardware SUSE-MicroOS-apparmor SUSE-CaaSP-Stack SUSE-MicroOS-container-runtime</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -130,7 +131,11 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
-            <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
+            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
+            <windows_delete_mode config:type="symbol">all</windows_delete_mode>
+            <linux_delete_mode config:type="symbol">all</linux_delete_mode>
+            <other_delete_mode config:type="symbol">all</other_delete_mode>
+
         </proposal>
 
         <volumes config:type="list">
@@ -252,6 +257,8 @@ textdomain="control"
           <service><name>kubelet</name></service>
           <service><name>salt-minion</name></service>
           <service><name>admin-node-setup</name></service>
+          <service><name>admin-node-init</name></service>
+          <service><name>chronyd</name></service>
         </services>
 
         <order config:type="integer">100</order>
@@ -264,6 +271,7 @@ textdomain="control"
           <service><name>docker</name></service>
           <service><name>container-feeder</name></service>
           <service><name>salt-minion</name></service>
+          <service><name>systemd-timesyncd</name></service>
         </services>
 
         <order config:type="integer">200</order>
@@ -276,97 +284,6 @@ textdomain="control"
 
       </system_role>
 
-      <system_role>
-        <id>micro_os_role</id>
-
-	<order config:type="integer">400</order>
-
-        <software>
-            <default_patterns>SUSE-MicroOS SUSE-MicroOS-hardware SUSE-MicroOS-apparmor</default_patterns>
-        </software>
-        <partitioning>
-            <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
-
-            <proposal>
-                <lvm config:type="boolean">false</lvm>
-                <proposal_settings_editable config:type="boolean">false</proposal_settings_editable>
-            </proposal>
-
-            <volumes config:type="list">
-                <!-- The / filesystem -->
-                <volume>
-                    <mount_point>/</mount_point>
-                    <!-- Default == final, since the user can't change it -->
-                    <fs_type>btrfs</fs_type>
-                    <desired_size config:type="disksize">25 GiB</desired_size>
-                    <min_size config:type="disksize">16 GiB</min_size>
-                    <max_size config:type="disksize">30 GiB</max_size>
-                    <weight config:type="integer">80</weight>
-                    <!-- Always use snapshots, no matter what -->
-                    <snapshots config:type="boolean">true</snapshots>
-                    <snapshots_configurable config:type="boolean">false</snapshots_configurable>
-
-                    <!-- You don't want to miss the / volume -->
-                    <proposed_configurable config:type="boolean">false</proposed_configurable>
-
-                    <!-- the default subvolume "@" was requested by product management -->
-                    <btrfs_default_subvolume>@</btrfs_default_subvolume>
-
-                    <!-- root filesystem should be read-only -->
-                    <btrfs_read_only config:type="boolean">true</btrfs_read_only>
-
-                    <!-- Subvolumes to be created for a Btrfs root file system -->
-                    <!-- copy_on_write is true by default -->
-                    <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
-                    <subvolumes config:type="list">
-                        <subvolume>
-                            <path>root</path>
-                        </subvolume>
-                        <subvolume>
-                            <path>tmp</path>
-                        </subvolume>
-                        <subvolume>
-                            <path>home</path>
-                        </subvolume>
-                        <subvolume>
-                            <path>cloud-init-config</path>
-                        </subvolume>
-                        <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
-                        <subvolume>
-                            <path>var</path>
-                            <copy_on_write config:type="boolean">false</copy_on_write>
-                        </subvolume>
-
-                        <!-- architecture specific subvolumes -->
-
-                        <subvolume>
-                            <path>boot/grub2/arm64-efi</path>
-                            <archs>aarch64</archs>
-                        </subvolume>
-                        <subvolume>
-                            <path>boot/grub2/i386-pc</path>
-                            <archs>x86_64</archs>
-                        </subvolume>
-                        <subvolume>
-                            <path>boot/grub2/powerpc-ieee1275</path>
-                            <archs>ppc,!board_powernv</archs>
-                        </subvolume>
-                        <subvolume>
-                            <path>boot/grub2/s390x-emu</path>
-                            <archs>s390</archs>
-                        </subvolume>
-                        <subvolume>
-                            <path>boot/grub2/x86_64-efi</path>
-                            <archs>x86_64</archs>
-                        </subvolume>
-                    </subvolumes>
-                </volume>
-
-                <!-- No swap partition is defined, so it's never created -->
-            </volumes>
-        </partitioning>
-
-      </system_role>
     </system_roles>
 
     <clone_modules config:type="list">
@@ -437,30 +354,77 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
           <label>Administration Node (Dashboard)</label>
         </dashboard_role>
         <dashboard_role_description>
-          <label>• A set of tools and a dashboard for managing cluster nodes.</label>
-        </dashboard_role_description>
+          <label>• MicroOS plus CaaS Platform Kubernetes Stack
+• Provides Velum administration dashboard
+• Should be installed before Cluster Nodes</label>
+	</dashboard_role_description>
         <worker_role>
           <!-- TRANSLATORS: a label for a system role -->
           <label>Cluster Node</label>
         </worker_role>
         <worker_role_description>
-          <label>• The system is registered in a given administration dashboard.</label>
+          <label>• MicroOS plus CaaS Platform Kubernetes Stack
+• Configured as a cluster worker node
+• Should be installed after the Admin/Dashboard Node</label>
         </worker_role_description>
         <none_role>
           <!-- TRANSLATORS: a label for a system role -->
           <label>Plain System</label>
         </none_role>
         <none_role_description>
-          <label>• No services started by default.</label>
+          <label>• MicroOS plus an unconfigured CaaS Platform Kubernetes Stack</label>
         </none_role_description>
-        <micro_os_role>
-          <!-- TRANSLATORS: a label for a system role -->
-          <label>SUSE MicroOS</label>
-        </micro_os_role>
-        <micro_os_role_description>
-          <label>• No services started by default.</label>
-        </micro_os_role_description>
     </texts>
+
+    <proposals config:type="list">
+        <proposal>
+            <label>Installation Settings</label>
+            <mode>installation</mode>
+            <stage>initial</stage>
+            <name>initial</name>
+            <unique_id>inst_initial</unique_id>
+            <enable_skip>no</enable_skip>
+            <proposal_modules config:type="list">
+                <proposal_module>
+                    <name>bootloader</name>
+                    <presentation_order>40</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>hwinfo</name>
+                    <presentation_order>80</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>partitions</name>
+                    <presentation_order>10</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>timezone</name>
+                    <presentation_order>25</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>network</name>
+                    <presentation_order>30</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>kdump</name>
+                    <presentation_order>50</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>ssh_import</name>
+                    <presentation_order>97</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>clone</name>
+                    <presentation_order>99</presentation_order>
+                </proposal_module>
+                <!-- software proposal should be computed almost at the end -->
+                <proposal_module>
+                    <name>software</name>
+                    <presentation_order>20</presentation_order>
+                </proposal_module>
+            </proposal_modules>
+        </proposal>
+    </proposals>
 
     <workflows config:type="list">
         <workflow>
@@ -479,6 +443,21 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <label>Network Autosetup</label>
                     <name>setup_dhcp</name>
                 </module>
+                <!-- We need to initialize libzypp in order to read product's license -->
+                <module>
+                    <label>Repositories Initialization</label>
+                    <name>repositories_initialization</name>
+                </module>
+                <module>
+                    <label>Welcome</label>
+                    <name>complex_welcome</name>
+                    <enable_back>no</enable_back>
+                    <enable_next>yes</enable_next>
+                    <arguments>
+                        <first_run>yes</first_run>
+                    </arguments>
+                    <retranslate config:type="boolean">true</retranslate>
+                </module>
                 <module>
                     <label>Network Activation</label>
                     <name>lan</name>
@@ -492,22 +471,39 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
+                    <name>scc</name>
+                    <enable_back>yes</enable_back>
+                    <enable_next>yes</enable_next>
+                </module>
+                <module>
                     <label>System Analysis</label>
                     <name>system_analysis</name>
                     <enable_back>yes</enable_back>
                     <enable_next>yes</enable_next>
                 </module>
                 <module>
+                    <label>Apply Modules Extensions</label>
+                    <name>modules_extensions</name>
+                </module>
+                <module>
                     <name>download_release_notes</name>
+                </module>
+                <module>
+                    <name>system_role</name>
+                </module>
+                <module>
+                    <label>User Settings</label>
+                    <name>root_first</name>
                 </module>
                 <module>
                     <heading>yes</heading>
                     <label>Installation</label>
                 </module>
                 <module>
-                    <name>casp_overview</name>
-                    <enable_back>yes</enable_back>
-                    <enable_next>yes</enable_next>
+                    <label>Installation Overview</label>
+                    <name>initial_installation_proposal</name>
+                    <execute>inst_proposal</execute>
+                    <proposal>initial</proposal>
                 </module>
                 <!-- FATE #303860: Provide consistent progress during installation -->
                 <module>
