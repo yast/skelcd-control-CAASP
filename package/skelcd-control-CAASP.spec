@@ -57,9 +57,6 @@ Requires:       yast2-branding-openSUSE
 Requires:       yast2-qt-branding-openSUSE
 %endif
 
-# the CaaSP specific packages
-Requires:       yast2-caasp
-
 # Generic Yast packages needed for the installer
 Requires:       autoyast2
 Requires:       yast2-add-on
@@ -115,7 +112,7 @@ ExcludeArch:    %ix86 s390
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.0.16
+Version:        15.1
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
