@@ -251,7 +251,6 @@ textdomain="control"
         <id>dashboard_role</id>
 
         <services config:type="list">
-          <service><name>container-feeder</name></service>
           <service><name>docker</name></service>
           <service><name>etcd</name></service>
           <service><name>kubelet</name></service>
@@ -269,7 +268,6 @@ textdomain="control"
 
         <services config:type="list">
           <service><name>docker</name></service>
-          <service><name>container-feeder</name></service>
           <service><name>salt-minion</name></service>
           <service><name>systemd-timesyncd</name></service>
         </services>
