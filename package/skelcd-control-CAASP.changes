@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Thu Oct 11 08:35:10 UTC 2018 - jmassaguerpla@suse.com
+
+- fix bsc#1110300 by running disc proposal before bootloader
+    
+    Port of commit
+    https://github.com/yast/skelcd-control-Kubic/commit/3a28ac79d59b50200755990812cad560513522cd
+    
+    to CaaSP4
+
+-------------------------------------------------------------------
 Thu Jun 28 15:25:12 UTC 2018 - rbrown@suse.com
 
 - Initial CaaSPv4 installation workflow (fate#325834)
