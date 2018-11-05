@@ -261,6 +261,7 @@ textdomain="control"
         </services>
 
         <order config:type="integer">100</order>
+        <additional_dialogs>inst_casp_admin_role</additional_dialogs>
       </system_role>
 
       <system_role>
@@ -273,6 +274,7 @@ textdomain="control"
         </services>
 
         <order config:type="integer">200</order>
+        <additional_dialogs>inst_casp_worker_role</additional_dialogs>
       </system_role>
 
       <system_role>
