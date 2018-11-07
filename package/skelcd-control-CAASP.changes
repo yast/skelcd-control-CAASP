@@ -1,3 +1,12 @@
+-------------------------------------------------------------------
+Tue Nov  6 13:45:16 UTC 2018 - lslezak@suse.cz
+
+- Display new role dialogs in the workflow (FATE#325834)
+- Clean up (removed the openSUSE Kubic parts, it has been moved to
+  to a separate package)
+- 15.4
+
+-------------------------------------------------------------------
 Thu Oct 11 14:43:55 UTC 2018 - jmassaguerpla@suse.com
 
 - fix bsc#1111541: do not enable container-feeder since this does

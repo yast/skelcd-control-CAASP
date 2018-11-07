@@ -1,7 +1,7 @@
 #
 # spec file for package skelcd-control-CAASP
 #
-# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2018 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -14,7 +14,6 @@
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
-
 
 ######################################################################
 #
@@ -33,29 +32,19 @@ BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 4.0.10
 
-%if 0%{?is_opensuse}
-# xsltproc - for building control.Kubic.xml from control.CAASP.xml
-BuildRequires:  libxslt-tools
-BuildRequires:  diffutils
-# we need to copy some parts from the openSUSE control.xml to Kubic
-BuildRequires:  skelcd-control-openSUSE
-%endif
-
 ######################################################################
 #
 # Here is the list of Yast packages which are needed in the
 # installation system (inst-sys) for the Yast installer
 #
 
-# SLES specific Yast packages needed in the inst-sys
+# CaaSP specific Yast packages needed in the inst-sys
 # to provide the functionality needed by this control file
+
+# new role dialogs
+Requires:       yast2-caasp >= 4.0.6
 Requires:       yast2-registration
-%if 0%{?is_susecaasp}
 Requires:       yast2-theme-SLE
-%else
-Requires:       yast2-branding-openSUSE
-Requires:       yast2-qt-branding-openSUSE
-%endif
 
 # Generic Yast packages needed for the installer
 Requires:       autoyast2
@@ -65,8 +54,8 @@ Requires:       yast2-devtools
 Requires:       yast2-fcoe-client
 # For creating the AutoYast profile at the end of installation (bnc#887406)
 Requires:       yast2-firewall
-# instsys_cleanup
-Requires:       yast2-installation >= 3.1.217.9
+# fixed role selection
+Requires:       yast2-installation >= 4.0.73
 Requires:       yast2-iscsi-client
 Requires:       yast2-kdump
 Requires:       yast2-multipath
@@ -112,7 +101,7 @@ ExcludeArch:    %ix86 s390
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.3
+Version:        15.4
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
@@ -131,15 +120,6 @@ The package contains the CaaSP control file needed for installation.
 
 %setup -n %{name}-%{version}
 
-%if 0%{?is_opensuse}
-%build
-# build control.Kubic.xml from control.CAASP.xml
-make -C control control.Kubic.xml
-# display the changes (just for easier debugging)
-# don't fail, a difference is expected
-diff -u control/control.CAASP.xml control/control.Kubic.xml || :
-%endif
-
 %check
 #
 # Verify syntax
@@ -151,14 +131,7 @@ make -C control check
 # Add control file 
 #
 mkdir -p $RPM_BUILD_ROOT%{?skelcdpath}/CD1
-%if 0%{?is_susecaasp}
 install -m 644 control/control.CAASP.xml $RPM_BUILD_ROOT%{?skelcdpath}/CD1/control.xml
-%else
-%if 0%{?is_opensuse}
-install -m 644 control/control.Kubic.xml $RPM_BUILD_ROOT%{?skelcdpath}/CD1/control.xml
-%endif
-%endif
-
 
 # install LICENSE (required by build service check)
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
@@ -166,14 +139,12 @@ install -m 644 LICENSE $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
 
 %files
 %defattr(644,root,root,755)
-%if 0%{?is_susecaasp}%{?is_opensuse}
 %if %{defined skelcdpath}
 %dir %{skelcdpath}
 %endif
 %dir %{?skelcdpath}/CD1
 %{?skelcdpath}/CD1/control.xml
-%endif
 %doc %dir %{_prefix}/share/doc/packages/%{name}
-%doc %{_prefix}/share/doc/packages/%{name}/LICENSE
+%license %{_prefix}/share/doc/packages/%{name}/LICENSE
 
 %changelog
