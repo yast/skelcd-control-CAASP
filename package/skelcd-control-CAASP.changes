@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Nov 29 13:51:06 UTC 2018 - Stasiek Michalski <hellcp@mailbox.org>
+
+- Update yast2-theme dependency (boo#1108422)
+- 15.5
+
+-------------------------------------------------------------------
 Tue Nov  6 13:45:16 UTC 2018 - lslezak@suse.cz
 
 - Display new role dialogs in the workflow (FATE#325834)

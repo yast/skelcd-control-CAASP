@@ -44,7 +44,7 @@ BuildRequires:  yast2-installation-control >= 4.0.10
 # new role dialogs
 Requires:       yast2-caasp >= 4.0.6
 Requires:       yast2-registration
-Requires:       yast2-theme-SLE
+Requires:       yast2-theme
 
 # Generic Yast packages needed for the installer
 Requires:       autoyast2
@@ -101,7 +101,7 @@ ExcludeArch:    %ix86 s390
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.4
+Version:        15.5
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
