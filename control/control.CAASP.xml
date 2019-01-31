@@ -144,6 +144,8 @@ textdomain="control"
                 <mount_point>/</mount_point>
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
+                <!-- Do not allow to select other fs type in the guided setup -->
+                <fs_types>btrfs</fs_types>
                 <desired_size config:type="disksize">25 GiB</desired_size>
                 <min_size config:type="disksize">20 GiB</min_size>
                 <max_size config:type="disksize">30 GiB</max_size>
@@ -216,6 +218,8 @@ textdomain="control"
                 <mount_point>/var/lib/docker</mount_point>
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
+                <!-- Do not allow to select other fs type in the guided setup -->
+                <fs_types>btrfs</fs_types>
                 <snapshots config:type="boolean">false</snapshots>
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
 
