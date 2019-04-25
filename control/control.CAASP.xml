@@ -188,6 +188,9 @@ textdomain="control"
                 <path>var/spool</path>
             </subvolume>
             <subvolume>
+                <path>var/lib/btrfs</path>
+            </subvolume>
+            <subvolume>
                 <path>var/lib/ca-certificates</path>
             </subvolume>
             <subvolume>

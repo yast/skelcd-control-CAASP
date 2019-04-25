@@ -102,7 +102,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        12.2.40
+Version:        12.2.41
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT

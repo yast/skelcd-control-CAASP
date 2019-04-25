@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Apr 25 11:18:04 UTC 2019 - Steffen Winterfeldt <snwint@suse.com>
+
+- add /var/lib/btrfs to list of btrfs subvolumes (bsc#1076548)
+- 12.2.41
+
+-------------------------------------------------------------------
 Fri Mar 23 07:25:26 UTC 2018 - jsrain@suse.cz
 
 - added subvolume for /var/lib/containers (bsc#1084469)
