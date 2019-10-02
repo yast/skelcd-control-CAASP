@@ -30,7 +30,7 @@ Name:           skelcd-control-CAASP
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
-BuildRequires:  yast2-installation-control >= 4.0.10
+BuildRequires:  yast2-installation-control >= 4.2.8
 
 ######################################################################
 #
