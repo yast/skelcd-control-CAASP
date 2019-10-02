@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Oct  2 10:53:58 UTC 2019 - Josef Reidinger <jreidinger@suse.com>
+
+- Add requirement for precise time (bsc#1145193)
+- 15.6
+
+-------------------------------------------------------------------
 Thu Jan 31 10:16:01 UTC 2019 - jlopez@suse.com
 
 - Force btrfs filesystem in Guided Setup (needed for bsc#1099485).
