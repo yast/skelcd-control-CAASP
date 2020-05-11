@@ -101,7 +101,7 @@ ExcludeArch:    %ix86 s390
 
 Url:            https://github.com/yast/skelcd-control-CAASP
 AutoReqProv:    off
-Version:        15.6
+Version:        15.7
 Release:        0
 Summary:        The CaaSP control file needed for installation
 License:        MIT
