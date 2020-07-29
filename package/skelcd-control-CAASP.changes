@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Jul 29 10:59:21 CEST 2020 - schubi@suse.de
 
-- Remove unneeded AY installation step "autoimage" (bsc#1140711).
+- Removed unneeded AY installation step "autoimage" (bsc#1140711).
 - 15.8
 
 -------------------------------------------------------------------
