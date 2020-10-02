@@ -1,11 +1,11 @@
-skelcd-control-CAASP
-===================
+Obsoleted Module
+================
 
-[![Travis Build](https://travis-ci.org/yast/skelcd-control-CAASP.svg?branch=master)](https://travis-ci.org/yast/skelcd-control-CAASP)
+**This module is obsoleted and is not developed anymore.**
 
+GIT
+---
 
-Installation control file for SUSE CaaS Platform product
+If you want to see the last state check the [*master_old*](../master_old) branch.
 
-See also the [documentation for the `control.xml` file][1].
-
-[1]: https://github.com/yast/yast-installation/blob/master/doc/control-file.md
+Use the [*SLE-15-GA*](../SLE-15-GA) branch for SLE-15 maintenance.
